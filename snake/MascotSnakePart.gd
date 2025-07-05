@@ -1,6 +1,7 @@
 class_name MascotSnakePart
 extends Node2D
 
+@export
 var angle_speed = 3
 
 var angle = 0
@@ -11,7 +12,6 @@ var superior:MascotSnakePart
 @export
 var velocity = 150
 
-@export
 var current_health:int = 0
 
 @export
@@ -19,16 +19,23 @@ var character:Character
 
 func _ready() -> void:
 	if character == null:
-		character = load("res://characters/dragoons/RegularDragoon.tscn").instantiate()
-		print("body not found, using default template")
+		character = debug_select_character()
 	current_health = character.health
 	add_child(character)
 	
 	if superior:
 		velocity = superior.velocity
 
+func debug_select_character():
+	print("body not found, using default template")
+	return load([
+		"res://characters/dragoons/RegularDragoon.tscn",
+		"res://characters/hololive/ina/Takodachi.tscn"
+	].pick_random()).instantiate()
 func _process(delta: float) -> void:
 	var velocity_change = velocity
+	while superior && !is_instance_valid(superior):
+		superior = superior.superior
 	if superior:
 		var distance = position.distance_to(superior.position)
 		var space_consumed = character.size + superior.character.size
@@ -49,4 +56,9 @@ func _process(delta: float) -> void:
 	position += direction_to
 		
 		
+func take_damage(amount:int=1) -> bool:
+	current_health -= amount
+	if current_health < 0:
+		queue_free()
+	return true
 		

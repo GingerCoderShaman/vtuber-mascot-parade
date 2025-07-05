@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc1oqmeyv42ut"]
+
+[ext_resource type="Texture2D" uid="uid://bi2qtl8na4lr4" path="res://textures/generic/laser.png" id="1_5dqfa"]
+[ext_resource type="Script" uid="uid://bxs0a27l7m4fr" path="res://objects/Laser.gd" id="1_8q724"]
+[ext_resource type="Script" uid="uid://b3aiioxeoomvy" path="res://objects/MatchParentMask.gd" id="3_76axf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q724"]
+size = Vector2(5.25, 8)
+
+[node name="Laser" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_8q724")
+
+[node name="Animation" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 1.5708
+texture = ExtResource("1_5dqfa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -0.375)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8q724")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_76axf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -0.375)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_8q724")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

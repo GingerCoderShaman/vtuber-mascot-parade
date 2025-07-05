@@ -1,7 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://brcylltgphk5r"]
+[gd_scene load_steps=13 format=3 uid="uid://brcylltgphk5r"]
 
+[ext_resource type="Script" uid="uid://dhy4u2bq5aq2k" path="res://world/World.gd" id="1_0usk6"]
 [ext_resource type="Script" uid="uid://83i83o3rj06p" path="res://snake/MascotSnakePart.gd" id="1_agq7g"]
 [ext_resource type="Script" uid="uid://b83sj5rv6p0bd" path="res://world/PushBox.gd" id="2_7cxxk"]
+[ext_resource type="Script" uid="uid://br537khhokaps" path="res://world/BoundaryBox.gd" id="3_xa3br"]
+[ext_resource type="PackedScene" uid="uid://cwijnq6tsctwf" path="res://enemy/hololive/ina/AngryTakodachi.tscn" id="5_jakce"]
+[ext_resource type="Script" uid="uid://t3n3hpcyso07" path="res://world/create_enemies.gd" id="5_k57ho"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7cxxk"]
 size = Vector2(1034, 182)
@@ -17,9 +21,14 @@ size = Vector2(294, 895)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jakce"]
 size = Vector2(1034, 182)
 
-[node name="TestingEnviroment" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k57ho"]
+size = Vector2(228, 189)
+
+[node name="TestingEnviroment" type="Node"]
+script = ExtResource("1_0usk6")
 
 [node name="Player" type="Node" parent="."]
+unique_name_in_owner = true
 
 [node name="Follower6" type="Node2D" parent="Player" node_paths=PackedStringArray("superior")]
 script = ExtResource("1_agq7g")
@@ -48,55 +57,78 @@ superior = NodePath("../Head")
 [node name="Head" type="Node2D" parent="Player"]
 script = ExtResource("1_agq7g")
 
-[node name="World" type="Node" parent="."]
+[node name="Enivroment" type="Node" parent="."]
 
-[node name="Area2D" type="Area2D" parent="World"]
+[node name="Area2D" type="Area2D" parent="Enivroment"]
 script = ExtResource("2_7cxxk")
 direction = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enivroment/Area2D"]
 position = Vector2(516, -78)
 shape = SubResource("RectangleShape2D_7cxxk")
 
-[node name="Sprite2D" type="Sprite2D" parent="World/Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Enivroment/Area2D"]
 position = Vector2(372.5, -84.5)
 scale = Vector2(1.45898, 0.376953)
 texture = SubResource("NoiseTexture2D_7cxxk")
 
-[node name="Area2D2" type="Area2D" parent="World"]
+[node name="Area2D2" type="Area2D" parent="Enivroment"]
 script = ExtResource("2_7cxxk")
 direction = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enivroment/Area2D2"]
 position = Vector2(871, 274)
 shape = SubResource("RectangleShape2D_xa3br")
 
-[node name="Sprite2D" type="Sprite2D" parent="World/Area2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="Enivroment/Area2D2"]
 position = Vector2(991.25, 219.875)
 scale = Vector2(1.05371, 1.53857)
 texture = SubResource("NoiseTexture2D_7cxxk")
 
-[node name="Area2D3" type="Area2D" parent="World"]
+[node name="Area2D3" type="Area2D" parent="Enivroment"]
 script = ExtResource("2_7cxxk")
 direction = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enivroment/Area2D3"]
 position = Vector2(-116, 295.5)
 shape = SubResource("RectangleShape2D_0usk6")
 
-[node name="Sprite2D" type="Sprite2D" parent="World/Area2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="Enivroment/Area2D3"]
 position = Vector2(-109.5, 288)
 scale = Vector2(0.611328, 1.83203)
 texture = SubResource("NoiseTexture2D_7cxxk")
 
-[node name="Area2D4" type="Area2D" parent="World"]
+[node name="Area2D4" type="Area2D" parent="Enivroment"]
 script = ExtResource("2_7cxxk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Area2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enivroment/Area2D4"]
 position = Vector2(416, 667)
 shape = SubResource("RectangleShape2D_jakce")
 
-[node name="Sprite2D" type="Sprite2D" parent="World/Area2D4"]
+[node name="Sprite2D" type="Sprite2D" parent="Enivroment/Area2D4"]
 position = Vector2(630.25, 654)
 scale = Vector2(2.45605, 0.376953)
 texture = SubResource("NoiseTexture2D_7cxxk")
+
+[node name="Area2D5" type="Area2D" parent="Enivroment"]
+script = ExtResource("3_xa3br")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enivroment/Area2D5"]
+position = Vector2(341, 247.5)
+shape = SubResource("RectangleShape2D_k57ho")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enivroment/Area2D5"]
+modulate = Color(1, 1, 1, 0.356863)
+position = Vector2(343, 250)
+scale = Vector2(0.4624, 0.376953)
+texture = SubResource("NoiseTexture2D_7cxxk")
+
+[node name="Enemies" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_k57ho")
+
+[node name="AngryTakodachi" parent="Enemies" instance=ExtResource("5_jakce")]
+position = Vector2(300, 300)
+
+[node name="Objects" type="Node" parent="."]
+unique_name_in_owner = true

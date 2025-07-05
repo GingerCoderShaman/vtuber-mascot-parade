@@ -18,8 +18,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	var removes = []
 	for body in bodies:
-		if overlaps_body(body):
-			var snake_part = body.get_parent()
+		if is_instance_valid(body) && overlaps_body(body): 
+			var snake_part = body.get_controller()
 			var direction_to = Vector2(cos(snake_part.angle), sin(snake_part.angle))
 			match direction:
 				DIRECTION.UP:
