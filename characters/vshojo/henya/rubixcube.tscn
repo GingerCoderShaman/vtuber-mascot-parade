@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://chpv30mp28r50"]
+
+[ext_resource type="Script" uid="uid://bpxaqmaqmwqtl" path="res://characters/vshojo/henya/rubixcube.gd" id="1_bs2fn"]
+[ext_resource type="Texture2D" uid="uid://cbf611jplkmx3" path="res://textures/vshojo/henya/rubixcube.png" id="2_oxcb3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4qnhc"]
+radius = 11.0454
+
+[node name="Rubixcube" type="CharacterBody2D"]
+collision_layer = 3
+script = ExtResource("1_bs2fn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4qnhc")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_oxcb3")

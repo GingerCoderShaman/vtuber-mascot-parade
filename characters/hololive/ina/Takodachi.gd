@@ -1,7 +1,10 @@
 class_name Takodachi 
 extends Character
 
-# _process TODO
-#   Fire Lasers every (Haste frames)
-#			put healing orbs around map
-#			do some logic with halo
+
+func do_action():
+	var heal_orb = load('res://objects/Heal.tscn').instantiate()
+	
+	heal_orb.set_collision_mask_value(Character.HIT_BOX_LAYER, true)
+	heal_orb.position = Vector2(randf(), randf()) * World.current.world_size
+	World.current.objects.add_child(heal_orb)

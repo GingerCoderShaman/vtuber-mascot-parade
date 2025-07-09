@@ -1,5 +1,5 @@
 class_name Laser
-extends CharacterBody2D
+extends StaticObject
 
 @export
 var laser_velocity:float = 150
@@ -29,12 +29,12 @@ func _process(delta: float) -> void:
 	if remaining_lifetime < 0:
 		queue_free()
 
-func get_controller():
-	return self
-
 func take_damage(_amount:int=1) -> bool:
 	return false
 
+func heal(_amount:int=1) -> bool:
+	return false
+
 func _on_area_2d_body_entered(body) -> void:
-	if body.get_controller().take_damage(damage):
+	if body.take_damage(damage):
 		queue_free()

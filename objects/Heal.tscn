@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://2nx3pk3wu5rs"]
+
+[ext_resource type="Script" uid="uid://gmowyw1ctc35" path="res://objects/Heal.gd" id="1_6fldg"]
+[ext_resource type="Texture2D" uid="uid://b8ihes16oal4v" path="res://textures/generic/heal.png" id="2_2fwt2"]
+[ext_resource type="Script" uid="uid://b3aiioxeoomvy" path="res://objects/MatchParentMask.gd" id="3_kc0j8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kc0j8"]
+size = Vector2(12.125, 14)
+
+[node name="Heal" type="CharacterBody2D"]
+collision_mask = 0
+script = ExtResource("1_6fldg")
+
+[node name="Animation" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_2fwt2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.28259e-05, 0.937496)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_kc0j8")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_kc0j8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_kc0j8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -28,6 +28,7 @@ collision_layer = 3
 collision_mask = 4
 script = ExtResource("1_fc3vl")
 size = 8.0
+health = 2.0
 metadata/_custom_type_script = "uid://m8uu7uvs1xj6"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
