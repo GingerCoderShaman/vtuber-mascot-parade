@@ -35,7 +35,10 @@ func _process(delta: float) -> void:
 	
 	if remaining_lifetime < 0:
 		queue_free()
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
+		
+func heal_body(body):
 	if body.heal(healing):
 		queue_free()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	heal_body(body)

@@ -1,7 +1,7 @@
 class_name AngryTakodachi
 extends Enemy
 
-@export var healing = 1.2
+@export var healing = 1.0
 
 @export
 var rate = 10
@@ -10,14 +10,25 @@ func _process(delta: float) -> void:
 	super._process(delta)
 	var target = null
 	for enemy in World.current.enemies.get_children():
-		if enemy.health != enemy.current_health && (target == null || target.global_position.distance_to(global_position) < enemy.global_position.distance_to(global_position)):
+		if  enemy.current_health/enemy.health < .8  && enemy is not AngryTakodachi && \
+			(target == null || target.position.distance_to(position) < enemy.position.distance_to(position)):
 			target = enemy
+
+	for item in World.current.enemies.get_children():
+		if (item is Heal && target is not Heal && (current_health/health) < .5) && \
+			item.health != item.current_health && (target == null || \
+			item.position.distance_to(position) < item.position.distance_to(position)):
+			target = item
+
 	if target == null:
 		for player in World.current.player.get_children():
-			if target == null ||  target.global_position.distance_to(global_position) > player.global_position.distance_to(global_position):
+			if target == null ||  target.position.distance_to(position) > \
+				player.position.distance_to(position):
 				target = player
-	
-	var desired_angle = self.get_angle_to(target.global_position)
+	if target == null:
+		return
+
+	var desired_angle = self.get_angle_to(target.position)
 	angle = rotate_toward(angle, desired_angle, angle_speed * delta)
 	var direction_to = Vector2(cos(angle), sin(angle)) * delta * angled_velocity
 	position += direction_to
@@ -25,6 +36,10 @@ func _process(delta: float) -> void:
 
 func process_effect(body, delta):
 	delta *= rate
+	if body is Heal:
+		body.heal_body(self)
+		return
+	
 	if (body is Character && body.take_damage(delta)) ||\
 		(body is Enemy && body.heal(delta * healing)):
-		take_damage(delta)
+		take_damage(delta * healing)

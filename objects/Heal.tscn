@@ -8,6 +8,7 @@
 size = Vector2(12.125, 14)
 
 [node name="Heal" type="CharacterBody2D"]
+collision_layer = 9
 collision_mask = 0
 script = ExtResource("1_6fldg")
 

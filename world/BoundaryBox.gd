@@ -14,9 +14,9 @@ func process_interaction_with_shape(body, child):
 			print("Child shape not supported in process")
 	elif child is CollisionObject2D:
 		print("Child object not supported in process")
-	
+
 func process_interaction_with_rectangle(body, child: CollisionShape2D):
-	var position_local = child.to_local(body.position)
+	var position_local = child.to_local(body.global_position)
 	var angle_transform = child.transform
 	angle_transform.origin = Vector2.ZERO
 	var angle_vectors = angle_transform.affine_inverse() * (Vector2(cos(body.angle), sin(body.angle)))
@@ -34,7 +34,7 @@ func process_interaction_with_rectangle(body, child: CollisionShape2D):
 			angle_vectors.y = -abs(angle_vectors.y)
 	angle_vectors = angle_transform * (angle_vectors)
 	body.angle = atan2(angle_vectors.y, angle_vectors.x)
-	
+
 func _process(_delta: float) -> void:
 	process_bounds()
 

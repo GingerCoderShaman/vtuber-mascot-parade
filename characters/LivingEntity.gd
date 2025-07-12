@@ -2,6 +2,7 @@ class_name LivingEntity
 extends CharacterBody2D
 
 @export var health: float = 5
+@export var size: float = 6
 
 @export
 var angle_speed = 3
@@ -42,7 +43,11 @@ func process_effect(_body, _delta):
 	pass
 
 func track_overlap(body):
+	if body == self:
+		return
 	tracked_entities.append(body)
 	
 func untrack_overlap(body):
+	if body == self:
+		return
 	tracked_entities.erase(body)

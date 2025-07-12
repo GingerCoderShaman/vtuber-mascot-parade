@@ -25,15 +25,14 @@ size = Vector2(1034, 182)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k57ho"]
 size = Vector2(228, 189)
 
-[node name="World" type="Node2D"]
+[node name="TestingEnviroment" type="Node"]
 script = ExtResource("1_0usk6")
-world_size = Vector2(720, 720)
 
-[node name="Player" type="Node2D" parent="."]
+[node name="Player" type="Node" parent="."]
 unique_name_in_owner = true
 
 [node name="Rubixcube" parent="Player" instance=ExtResource("4_2pcqi")]
-position = Vector2(573, 209)
+position = Vector2(571, 212)
 
 [node name="Takodachi" parent="Player" instance=ExtResource("3_7w34c")]
 position = Vector2(573, 183)
@@ -49,7 +48,7 @@ position = Vector2(576, 124)
 [node name="RegularDragoon" parent="Player" instance=ExtResource("2_2pcqi")]
 position = Vector2(578, 96)
 
-[node name="Enivroment" type="Node2D" parent="."]
+[node name="Enivroment" type="Node" parent="."]
 
 [node name="Spawner" type="Node2D" parent="Enivroment"]
 position = Vector2(387, 258)
@@ -124,11 +123,8 @@ position = Vector2(343, 250)
 scale = Vector2(0.4624, 0.376953)
 texture = SubResource("NoiseTexture2D_7cxxk")
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Enemies" type="Node" parent="."]
 unique_name_in_owner = true
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="Objects" type="Node" parent="."]
 unique_name_in_owner = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(359, 262)

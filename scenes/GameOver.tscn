@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://do4g33k3pvnk3"]
+
+[ext_resource type="Script" uid="uid://1sd2g7xwh50r" path="res://scenes/GameOver.gd" id="1_6bcno"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvctj"]
+
+[sub_resource type="Theme" id="Theme_6bcno"]
+Panel/styles/panel = SubResource("StyleBoxFlat_tvctj")
+
+[sub_resource type="LabelSettings" id="LabelSettings_tvctj"]
+font_size = 64
+font_color = Color(1, 0, 0, 1)
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_6bcno")
+
+[node name="MainControl" type="Control" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+z_index = 4096
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -143.5
+offset_right = 250.0
+offset_bottom = 143.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6bcno")
+
+[node name="PanelContainer" type="PanelContainer" parent="MainControl"]
+layout_mode = 0
+offset_left = -8207.0
+offset_top = -5480.0
+offset_right = 10265.0
+offset_bottom = 4544.0
+
+[node name="Label" type="Label" parent="MainControl"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 16.0
+offset_right = 421.0
+offset_bottom = 128.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_tvctj")
+horizontal_alignment = 1
+
+[node name="MainMenu" type="Button" parent="MainControl"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 147.0
+offset_right = 318.0
+offset_bottom = 181.0
+focus_next = NodePath("../NewGame")
+focus_previous = NodePath("../NewGame")
+text = "Main Menu"
+
+[node name="NewGame" type="Button" parent="MainControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 169.0
+offset_top = 100.0
+offset_right = 318.0
+offset_bottom = 134.0
+focus_next = NodePath("../MainMenu")
+focus_previous = NodePath("../MainMenu")
+text = "New Game"
+
+[connection signal="pressed" from="MainControl/NewGame" to="." method="_on_new_game_pressed"]
