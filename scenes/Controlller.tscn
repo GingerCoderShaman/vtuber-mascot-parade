@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://7mo36mcok6b5"]
 
-[ext_resource type="PackedScene" uid="uid://brcylltgphk5r" path="res://world/testing_enviroment.tscn" id="1_jyybu"]
+[ext_resource type="PackedScene" uid="uid://bxpgm62m72pp7" path="res://scenes/MainMenu.tscn" id="1_jyybu"]
 
 [node name="Controlller" type="Node"]
 
-[node name="World" parent="." instance=ExtResource("1_jyybu")]
+[node name="MainMenu" parent="." instance=ExtResource("1_jyybu")]

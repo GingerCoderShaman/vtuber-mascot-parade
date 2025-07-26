@@ -9,13 +9,19 @@ var angle_speed = 3
 @export
 var angled_velocity = 150
 
-@onready var current_health = health
+var current_health
 var angle = 0
+
+@export var in_game = true
 
 var tracked_entities = []
 
+func _ready() -> void:
+	current_health = health
+
 func _process(delta):
-	process_overlap_effect(delta)
+	if in_game:
+		process_overlap_effect(delta)
 
 func take_damage(amount:float=1) -> bool:
 	current_health -= amount

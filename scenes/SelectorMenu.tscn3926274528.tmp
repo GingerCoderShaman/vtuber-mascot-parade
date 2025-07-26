@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://q3o6m3u5hq5o"]
+
+[ext_resource type="Script" uid="uid://b6q1htns51xh7" path="res://scenes/CharacterSelector.gd" id="1_xr0xo"]
+[ext_resource type="PackedScene" uid="uid://btk5ue5k11f22" path="res://characters/indie/dokibird/RegularDragoon.tscn" id="2_umppr"]
+
+[node name="SelectorMenu" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.5
+offset_top = -149.0
+offset_right = 336.5
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 256.0
+offset_right = 649.0
+offset_bottom = 287.0
+text = "Start Game"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 18.0
+offset_right = 622.0
+offset_bottom = 55.0
+script = ExtResource("1_xr0xo")
+selectable_characters = Array[PackedScene]([ExtResource("2_umppr")])

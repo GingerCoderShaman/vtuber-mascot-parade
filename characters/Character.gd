@@ -8,20 +8,22 @@ const HIT_BOX_LAYER = 2
 @onready var haste_countdown = haste
 
 func _ready() -> void:
+	super._ready()
 	add_child(load("res://characters/generic/units/Healthbar.tscn").instantiate())
 
 func _process(delta: float) -> void:
 	super._process(delta)
-	process_actions(delta)
-	process_movement(delta)
+	if in_game:
+		process_actions(delta)
+		process_movement(delta)
 
 func process_movement(delta):
 	var velocity_change = angled_velocity
 	var index = get_index()
 	var brothers = get_parent().get_children()
 	var superior = null
-	if index != brothers.size() - 1:
-		superior = brothers[index+1]
+	if index != 0:
+		superior = brothers[index-1]
 	if superior:
 		var distance = position.distance_to(superior.position)
 		var space_consumed = size + superior.size

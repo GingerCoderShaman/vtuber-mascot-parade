@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://db0qtk2hdnsrv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p6uru"]
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxEmpty_p6uru")

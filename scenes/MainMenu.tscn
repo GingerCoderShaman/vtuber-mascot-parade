@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxpgm62m72pp7"]
+
+[ext_resource type="Script" uid="uid://bw3vyfcxhv2g3" path="res://scenes/main_menu.gd" id="1_yqorp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvctj"]
+
+[sub_resource type="Theme" id="Theme_ukcvp"]
+Panel/styles/panel = SubResource("StyleBoxFlat_tvctj")
+
+[sub_resource type="LabelSettings" id="LabelSettings_yqorp"]
+font_size = 32
+font_color = Color(0.678431, 0.552941, 0.247059, 1)
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_yqorp")
+
+[node name="MainControl" type="Control" parent="."]
+unique_name_in_owner = true
+z_index = 4096
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -143.5
+offset_right = 250.0
+offset_bottom = 143.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ukcvp")
+
+[node name="PanelContainer" type="PanelContainer" parent="MainControl"]
+layout_mode = 0
+offset_left = -8212.0
+offset_top = -5462.5
+offset_right = 10260.0
+offset_bottom = 4561.5
+
+[node name="Label" type="Label" parent="MainControl"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = -0.5
+offset_right = 469.0
+offset_bottom = 62.5
+text = "Vtuber Mascot parade"
+label_settings = SubResource("LabelSettings_yqorp")
+horizontal_alignment = 1
+
+[node name="Exit" type="Button" parent="MainControl"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 193.5
+offset_right = 318.0
+offset_bottom = 227.5
+focus_next = NodePath("../NewGame")
+focus_previous = NodePath("../NewGame")
+text = "Exit
+"
+
+[node name="NewGame" type="Button" parent="MainControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 169.0
+offset_top = 100.0
+offset_right = 318.0
+offset_bottom = 134.0
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Exit")
+text = "New Game"
+
+[connection signal="pressed" from="MainControl/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MainControl/NewGame" to="." method="_on_new_game_pressed"]

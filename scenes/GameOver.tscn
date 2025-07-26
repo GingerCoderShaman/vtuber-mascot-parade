@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://1sd2g7xwh50r" path="res://scenes/GameOver.gd" id="1_6bcno"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvctj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bcno"]
 
 [sub_resource type="Theme" id="Theme_6bcno"]
-Panel/styles/panel = SubResource("StyleBoxFlat_tvctj")
+Panel/styles/panel = SubResource("StyleBoxFlat_6bcno")
 
 [sub_resource type="LabelSettings" id="LabelSettings_tvctj"]
 font_size = 64
@@ -34,10 +34,10 @@ theme = SubResource("Theme_6bcno")
 
 [node name="PanelContainer" type="PanelContainer" parent="MainControl"]
 layout_mode = 0
-offset_left = -8207.0
-offset_top = -5480.0
-offset_right = 10265.0
-offset_bottom = 4544.0
+offset_left = -8231.0
+offset_top = -5498.5
+offset_right = 10241.0
+offset_bottom = 4525.5
 
 [node name="Label" type="Label" parent="MainControl"]
 layout_mode = 0
@@ -70,4 +70,5 @@ focus_next = NodePath("../MainMenu")
 focus_previous = NodePath("../MainMenu")
 text = "New Game"
 
+[connection signal="pressed" from="MainControl/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="MainControl/NewGame" to="." method="_on_new_game_pressed"]

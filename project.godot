@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="vtuber mascot parade"
-run/main_scene="uid://brcylltgphk5r"
+run/main_scene="uid://7mo36mcok6b5"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
