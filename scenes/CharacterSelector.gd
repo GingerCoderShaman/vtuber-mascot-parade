@@ -13,7 +13,7 @@ func _ready():
 		var character_button = MenuUtil.generate_character_select_button(Vector2(%CharacterSelection.size.y, %CharacterSelection.size.y), selectable_characters[index])
 		character_button.connect('pressed', func(): self.add_character(index))
 		%CharacterSelection.add_child(character_button)
-
+	%CharacterSelection.get_child(0).grab_focus()
 func add_character(index):
 	if %SelectedCharacters.get_child_count() >= max_size:
 		return
@@ -25,6 +25,7 @@ func add_character(index):
 func remove_character(index):
 	selected_entities.remove_at(index)
 	%SelectedCharacters.remove_child(%SelectedCharacters.get_child(index))
+	%CharacterSelection.get_child(0).grab_focus()
 	
 func start_game():
 	if %SelectedCharacters.get_child_count() > max_size ||\
