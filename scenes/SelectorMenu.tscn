@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://q3o6m3u5hq5o"]
+[gd_scene load_steps=6 format=3 uid="uid://q3o6m3u5hq5o"]
 
 [ext_resource type="PackedScene" uid="uid://bgwly6pw4ffjm" path="res://characters/hololive/ina/Takodachi.tscn" id="1_aryvn"]
 [ext_resource type="Script" uid="uid://b6q1htns51xh7" path="res://scenes/CharacterSelector.gd" id="1_xr0xo"]
 [ext_resource type="PackedScene" uid="uid://btk5ue5k11f22" path="res://characters/indie/dokibird/RegularDragoon.tscn" id="2_umppr"]
 [ext_resource type="PackedScene" uid="uid://chpv30mp28r50" path="res://characters/indie/henya/rubixcube.tscn" id="4_umppr"]
+[ext_resource type="PackedScene" uid="uid://7yt7e447rxyw" path="res://characters/indie/saba/Kaniki.tscn" id="5_wvoht"]
 
 [node name="SelectorMenu" type="CanvasLayer"]
 script = ExtResource("1_xr0xo")
-selectable_characters = Array[PackedScene]([ExtResource("2_umppr"), ExtResource("1_aryvn"), ExtResource("4_umppr")])
+selectable_characters = Array[PackedScene]([ExtResource("2_umppr"), ExtResource("1_aryvn"), ExtResource("4_umppr"), ExtResource("5_wvoht")])
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

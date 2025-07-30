@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3k5s08jrwyh8"]
+
+[ext_resource type="Script" uid="uid://br3y1db2stkhd" path="res://characters/indie/saba/kaniki_arm.gd" id="1_0h0jr"]
+[ext_resource type="Texture2D" uid="uid://cf8rxuwpbbcle" path="res://textures/indie/saba/SabaStrike.png" id="1_w0muj"]
+[ext_resource type="Texture2D" uid="uid://dsqj1n64kehl2" path="res://textures/indie/saba/Kaniki_arm.png" id="2_0h0jr"]
+
+[sub_resource type="Animation" id="Animation_5xryd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arm/Area2D/SabaStrike:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arm/KanikiArm:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-8, -8)]
+}
+
+[sub_resource type="Animation" id="Animation_d00pp"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arm/Area2D/SabaStrike:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.02, 0.18, 0.33),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Arm/KanikiArm:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.04, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-8, -8), Vector2(-11, -12), Vector2(-8, -8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hyn7v"]
+_data = {
+&"RESET": SubResource("Animation_5xryd"),
+&"attack": SubResource("Animation_d00pp")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cn0a5"]
+
+[node name="Arm" type="Node2D"]
+script = ExtResource("1_0h0jr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_hyn7v")
+}
+autoplay = "RESET"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-15, -15)
+shape = SubResource("CircleShape2D_cn0a5")
+
+[node name="SabaStrike" type="Sprite2D" parent="Area2D"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(-14, -15)
+texture = ExtResource("1_w0muj")
+
+[node name="KanikiArm" type="Sprite2D" parent="."]
+z_index = -6
+texture_filter = 1
+position = Vector2(-8, -8)
+texture = ExtResource("2_0h0jr")
+
+[connection signal="body_entered" from="Area2D" to="." method="attack"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbf611jplkmx3"
-path="res://.godot/imported/rubixcube.png-a8cd18e944fe07ae01db267a77899bce.ctex"
+uid="uid://cf8rxuwpbbcle"
+path="res://.godot/imported/SabaStrike.png-c67a022ef4885a5e6512d312589d1431.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/vshojo/henya/rubixcube.png"
-dest_files=["res://.godot/imported/rubixcube.png-a8cd18e944fe07ae01db267a77899bce.ctex"]
+source_file="res://textures/indie/saba/SabaStrike.png"
+dest_files=["res://.godot/imported/SabaStrike.png-c67a022ef4885a5e6512d312589d1431.ctex"]
 
 [params]
 

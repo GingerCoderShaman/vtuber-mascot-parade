@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnm26e2x8002u"]
+
+[ext_resource type="Script" uid="uid://cp7v31yyewldo" path="res://objects/Explosion.gd" id="1_hfoed"]
+[ext_resource type="Texture2D" uid="uid://ds3viq3fes2d2" path="res://textures/indie/henya/rubixcube_explode_evil.png" id="2_eobfe"]
+[ext_resource type="Script" uid="uid://cw3n44efowqd" path="res://characters/indie/henya/heny_cube_explosion.gd" id="3_p3461"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yyap"]
+size = Vector2(12.125, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_csdiq"]
+radius = 32.1403
+
+[node name="Explosion" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_hfoed")
+
+[node name="Explosion_Body" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(0.499999, 0.500002)
+scale = Vector2(2.46875, 2.34375)
+texture = ExtResource("2_eobfe")
+script = ExtResource("3_p3461")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.28259e-05, 0.937496)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_4yyap")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_csdiq")
+
+[connection signal="body_entered" from="Area2D" to="." method="deal_damage"]

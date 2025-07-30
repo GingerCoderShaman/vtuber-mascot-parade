@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmid8pcnpjc7m"
-path="res://.godot/imported/regular_dragoon.png-f4d53863ef1c1e839068770e8b6c49be.ctex"
+uid="uid://bhd71t4p67qtn"
+path="res://.godot/imported/regular_dragoon_legs_walk2.png-ff7e285bef191e73af15920b9848914a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/dragoons/regular_dragoon.png"
-dest_files=["res://.godot/imported/regular_dragoon.png-f4d53863ef1c1e839068770e8b6c49be.ctex"]
+source_file="res://textures/indie/dragoons/regular_dragoon_legs_walk2.png"
+dest_files=["res://.godot/imported/regular_dragoon_legs_walk2.png-ff7e285bef191e73af15920b9848914a.ctex"]
 
 [params]
 

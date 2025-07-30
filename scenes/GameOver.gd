@@ -21,7 +21,6 @@ func _on_new_game_pressed() -> void:
 		world.tree_exited.connect(build_new_world)
 		world.queue_free()
 	else:
-		print("world was not freeed")
 		build_new_world()
 
 func build_new_world():
@@ -35,7 +34,6 @@ func _on_main_menu_pressed() -> void:
 		world.tree_exited.connect(build_main_menu)
 		world.queue_free()
 	else:
-		print("world was not freeed")
 		build_main_menu()
 
 func build_main_menu():

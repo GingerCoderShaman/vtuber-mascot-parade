@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://7yt7e447rxyw"]
+
+[ext_resource type="Script" uid="uid://bx8vc2lmv20j4" path="res://characters/indie/saba/Kaniki.gd" id="1_3d1ms"]
+[ext_resource type="Texture2D" uid="uid://d15r3l5lyelo3" path="res://textures/indie/saba/Kaniki_body.png" id="2_mu60e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5off"]
+radius = 7.07107
+
+[node name="Kaniki" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_3d1ms")
+damage = 5
+haste = 0.5
+
+[node name="KanikiBody" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_mu60e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x5off")

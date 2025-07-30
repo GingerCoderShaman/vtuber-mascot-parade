@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btvra1gciwsan"
-path="res://.godot/imported/angry_dragoon.png-182b21078ad67a7c07afccbb695a227f.ctex"
+uid="uid://cs02ymjx6dckr"
+path="res://.godot/imported/Kaniki.png-4507daa9463bd29a02b09268e777fce2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/dragoons/angry_dragoon.png"
-dest_files=["res://.godot/imported/angry_dragoon.png-182b21078ad67a7c07afccbb695a227f.ctex"]
+source_file="res://textures/indie/saba/Kaniki.png"
+dest_files=["res://.godot/imported/Kaniki.png-4507daa9463bd29a02b09268e777fce2.ctex"]
 
 [params]
 

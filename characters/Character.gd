@@ -46,8 +46,8 @@ func process_movement(delta):
 func process_actions(delta:float):
 	haste_countdown -= delta
 	if(haste_countdown < 0):
-		do_action()
 		haste_countdown = haste
+		do_action()
 
 func do_action():
 	pass

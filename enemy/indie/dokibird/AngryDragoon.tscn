@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://sq0w442c01wi"]
 
 [ext_resource type="Script" uid="uid://cva5enyoyhyq" path="res://enemy/indie/dokibird/AngryDragoon.gd" id="1_3ibs0"]
-[ext_resource type="Texture2D" uid="uid://cqe0jfeas1wp1" path="res://textures/dragoons/regular_dragoon_legs_standing.png" id="2_3ibs0"]
-[ext_resource type="Texture2D" uid="uid://bmkywuvc8p71m" path="res://textures/dragoons/regular_dragoon_legs_walk1.png" id="3_i80dw"]
+[ext_resource type="Texture2D" uid="uid://cqe0jfeas1wp1" path="res://textures/indie/dragoons/regular_dragoon_legs_standing.png" id="2_3ibs0"]
+[ext_resource type="Texture2D" uid="uid://bmkywuvc8p71m" path="res://textures/indie/dragoons/regular_dragoon_legs_walk1.png" id="3_i80dw"]
 [ext_resource type="Script" uid="uid://cu6hrbmtg2cos" path="res://characters/generic/animation_player.gd" id="4_6y401"]
-[ext_resource type="Texture2D" uid="uid://bhd71t4p67qtn" path="res://textures/dragoons/regular_dragoon_legs_walk2.png" id="4_d85nv"]
+[ext_resource type="Texture2D" uid="uid://bhd71t4p67qtn" path="res://textures/indie/dragoons/regular_dragoon_legs_walk2.png" id="4_d85nv"]
 [ext_resource type="Script" uid="uid://b3aiioxeoomvy" path="res://objects/MatchParentMask.gd" id="6_1xgsf"]
-[ext_resource type="Texture2D" uid="uid://btvra1gciwsan" path="res://textures/dragoons/angry_dragoon.png" id="6_7mt5s"]
+[ext_resource type="Texture2D" uid="uid://btvra1gciwsan" path="res://textures/indie/dragoons/angry_dragoon.png" id="6_7mt5s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i80dw"]
 

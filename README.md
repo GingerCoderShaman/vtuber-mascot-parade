@@ -19,3 +19,6 @@ https://www.youtube.com/live/-aOcLgkZhR4
 
 (part 5)
 https://www.youtube.com/live/NvB8bb1XHYo
+
+(part 6)
+https://www.youtube.com/watch?v=Zp7EiWFtRN0&ab_channel=GingerCoderShaman

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqe0jfeas1wp1"
-path="res://.godot/imported/regular_dragoon_legs_standing.png-eafa5f888794713537cd869a558d8c6b.ctex"
+uid="uid://btvra1gciwsan"
+path="res://.godot/imported/angry_dragoon.png-976ec4dc9c9e7de21bfeff1ebb2e0c9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/dragoons/regular_dragoon_legs_standing.png"
-dest_files=["res://.godot/imported/regular_dragoon_legs_standing.png-eafa5f888794713537cd869a558d8c6b.ctex"]
+source_file="res://textures/indie/dragoons/angry_dragoon.png"
+dest_files=["res://.godot/imported/angry_dragoon.png-976ec4dc9c9e7de21bfeff1ebb2e0c9d.ctex"]
 
 [params]
 

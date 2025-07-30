@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhd71t4p67qtn"
-path="res://.godot/imported/regular_dragoon_legs_walk2.png-25a182561dde5c0a0ba9e4087d080f2e.ctex"
+uid="uid://d15r3l5lyelo3"
+path="res://.godot/imported/Kaniki_body.png-e9833e6ee5151a4f2e0ffd350ef46f77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/dragoons/regular_dragoon_legs_walk2.png"
-dest_files=["res://.godot/imported/regular_dragoon_legs_walk2.png-25a182561dde5c0a0ba9e4087d080f2e.ctex"]
+source_file="res://textures/indie/saba/Kaniki_body.png"
+dest_files=["res://.godot/imported/Kaniki_body.png-e9833e6ee5151a4f2e0ffd350ef46f77.ctex"]
 
 [params]
 

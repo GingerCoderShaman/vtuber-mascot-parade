@@ -1,7 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://chpv30mp28r50"]
+[gd_scene load_steps=7 format=3 uid="uid://chpv30mp28r50"]
 
 [ext_resource type="Script" uid="uid://bpxaqmaqmwqtl" path="res://characters/indie/henya/rubixcube.gd" id="1_bs2fn"]
-[ext_resource type="Texture2D" uid="uid://cbf611jplkmx3" path="res://textures/vshojo/henya/rubixcube.png" id="2_oxcb3"]
+[ext_resource type="Texture2D" uid="uid://exhanwfcal15" path="res://textures/indie/henya/rubixcube_explode.png" id="2_0aj1o"]
+[ext_resource type="Texture2D" uid="uid://cbf611jplkmx3" path="res://textures/indie/henya/rubixcube.png" id="2_oxcb3"]
+[ext_resource type="Script" uid="uid://cw3n44efowqd" path="res://characters/indie/henya/heny_cube_explosion.gd" id="3_uihsd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7jklh"]
+radius = 14.2089
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4qnhc"]
 radius = 11.0454
@@ -9,6 +14,24 @@ radius = 11.0454
 [node name="Rubixcube" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_bs2fn")
+haste = 15.0
+
+[node name="RubixcubeExplode" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+z_index = -30
+texture_filter = 1
+position = Vector2(-0.5, -1)
+scale = Vector2(3.34375, 3.25)
+texture = ExtResource("2_0aj1o")
+script = ExtResource("3_uihsd")
+
+[node name="Area2D" type="Area2D" parent="RubixcubeExplode"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RubixcubeExplode/Area2D"]
+shape = SubResource("CircleShape2D_7jklh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4qnhc")
@@ -16,3 +39,6 @@ shape = SubResource("CircleShape2D_4qnhc")
 [node name="Body" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_oxcb3")
+
+[connection signal="body_entered" from="RubixcubeExplode/Area2D" to="." method="track_overlap"]
+[connection signal="body_exited" from="RubixcubeExplode/Area2D" to="." method="untrack_overlap"]

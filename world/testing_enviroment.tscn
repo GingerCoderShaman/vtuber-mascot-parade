@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://brcylltgphk5r"]
+[gd_scene load_steps=15 format=3 uid="uid://brcylltgphk5r"]
 
 [ext_resource type="Script" uid="uid://dhy4u2bq5aq2k" path="res://world/World.gd" id="1_0usk6"]
 [ext_resource type="Script" uid="uid://bwm0nal68tatf" path="res://world/PlayerHandler.gd" id="2_2pcqi"]
 [ext_resource type="Script" uid="uid://b83sj5rv6p0bd" path="res://world/PushBox.gd" id="2_7cxxk"]
 [ext_resource type="Script" uid="uid://br537khhokaps" path="res://world/BoundaryBox.gd" id="3_xa3br"]
 [ext_resource type="Script" uid="uid://n8bdti25fg8k" path="res://world/Spawner.gd" id="5_1jveq"]
+[ext_resource type="PackedScene" uid="uid://cltqm5nlopcfo" path="res://enemy/indie/henya/rubixcube_evil.tscn" id="6_7w34c"]
 [ext_resource type="PackedScene" uid="uid://27oau5umppgs" path="res://enemy/hololive/ina/AngryTakodachi.tscn" id="6_bk1d4"]
 [ext_resource type="PackedScene" uid="uid://sq0w442c01wi" path="res://enemy/indie/dokibird/AngryDragoon.tscn" id="7_lxhsa"]
 
@@ -39,7 +40,7 @@ player_start = Vector2(348, 108)
 [node name="Spawner" type="Node2D" parent="Enivroment"]
 position = Vector2(387, 258)
 script = ExtResource("5_1jveq")
-spawns = Array[PackedScene]([ExtResource("6_bk1d4"), ExtResource("7_lxhsa")])
+spawns = Array[PackedScene]([ExtResource("6_bk1d4"), ExtResource("7_lxhsa"), ExtResource("6_7w34c")])
 
 [node name="Area2D" type="Area2D" parent="Enivroment"]
 position = Vector2(100, -2)
