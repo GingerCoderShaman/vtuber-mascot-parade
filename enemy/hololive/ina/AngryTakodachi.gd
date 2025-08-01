@@ -29,9 +29,7 @@ func _process(delta: float) -> void:
 		return
 
 	var desired_angle = self.get_angle_to(target.position)
-	angle = rotate_toward(angle, desired_angle, angle_speed * delta)
-	var direction_to = Vector2(cos(angle), sin(angle)) * delta * angled_velocity
-	position += direction_to
+	move_to_angle(desired_angle, delta)
 
 
 func process_effect(body, delta):

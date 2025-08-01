@@ -22,3 +22,6 @@ https://www.youtube.com/live/NvB8bb1XHYo
 
 (part 6)
 https://www.youtube.com/watch?v=Zp7EiWFtRN0&ab_channel=GingerCoderShaman
+
+(part 7)
+https://www.youtube.com/watch?v=4wTgzw8Bggw&ab_channel=GingerCoderShaman

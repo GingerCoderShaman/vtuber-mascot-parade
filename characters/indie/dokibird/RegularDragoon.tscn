@@ -30,8 +30,7 @@ animations = [{
 }]
 
 [node name="RegularDragoon" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 4
+collision_layer = 2
 script = ExtResource("1_q7nrk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

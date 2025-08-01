@@ -31,7 +31,7 @@ func start_game():
 	if %SelectedCharacters.get_child_count() > max_size ||\
 		%SelectedCharacters.get_child_count() < min_size:
 		return
-	var new_world = load("res://world/testing_enviroment.tscn").instantiate()
+	var new_world = load("res://world/TestWorldWithTileSet.tscn").instantiate()
 	get_parent().add_child(new_world)
 	for character_index in selected_entities:
 		new_world.player.add_child(selectable_characters[character_index].instantiate())

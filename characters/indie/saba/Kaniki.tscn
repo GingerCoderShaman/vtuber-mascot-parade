@@ -7,8 +7,7 @@
 radius = 7.07107
 
 [node name="Kaniki" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
 script = ExtResource("1_3d1ms")
 damage = 5
 haste = 0.5

@@ -16,6 +16,10 @@ func _process(delta: float) -> void:
 	if in_game:
 		process_actions(delta)
 		process_movement(delta)
+		
+func _physics_process(delta):
+	if in_game:
+		process_movement(delta)
 
 func process_movement(delta):
 	var velocity_change = angled_velocity
@@ -29,8 +33,9 @@ func process_movement(delta):
 		var space_consumed = size + superior.size
 		if distance > space_consumed:
 			angle = position.angle_to_point(superior.position)
-
 			velocity_change *= min(1, max(0, (distance/(space_consumed*2))))
+			var direction_to = Vector2(cos(angle), sin(angle)) * delta * velocity_change
+			position += direction_to
 	else:
 		var desired_direction = Vector2(
 				Input.get_axis('world_left', 'world_right'),
@@ -39,9 +44,17 @@ func process_movement(delta):
 		if(!desired_direction.is_zero_approx()):
 			var desired_angle = atan2(desired_direction.y, desired_direction.x)
 			angle = rotate_toward(angle, desired_angle, angle_speed * delta)
+			
+		var direction_to = Vector2(cos(angle), sin(angle)) * delta * velocity_change
+		#IGNORE COLLISION PHYSICS
+		if move_and_collide(Vector2.ZERO, true):
+			position += direction_to
+			return
 
-	var direction_to = Vector2(cos(angle), sin(angle)) * delta * velocity_change
-	position += direction_to
+		var collision_info = move_and_collide(direction_to)
+		if collision_info:
+			var change = direction_to.bounce(collision_info.get_normal())
+			angle = atan2(change.y, change.x)
 
 func process_actions(delta:float):
 	haste_countdown -= delta

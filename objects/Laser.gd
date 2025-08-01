@@ -19,9 +19,17 @@ var angle:
 	set(value):  
 		rotation = value
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var direction_to = Vector2(cos(angle), sin(angle)) * delta * laser_velocity
-	position += direction_to
+	var collision_info = move_and_collide(direction_to)
+	if collision_info:
+		if collision_info.get_collider() is Enemy && collision_info.get_collider().take_damage(damage):
+			queue_free()
+			return
+		var change = direction_to.bounce(collision_info.get_normal())
+		angle = atan2(change.y, change.x)
+
+func _process(delta: float) -> void:
 	remaining_lifetime -= delta
 	
 	self.modulate.a = (remaining_lifetime/lifetime)
@@ -34,7 +42,3 @@ func take_damage(_amount:int=1) -> bool:
 
 func heal(_amount:int=1) -> bool:
 	return false
-
-func _on_area_2d_body_entered(body) -> void:
-	if body.take_damage(damage):
-		queue_free()
