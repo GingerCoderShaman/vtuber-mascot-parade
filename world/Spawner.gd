@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	
 	if remaining_spawn_time < 0:
 		var enemy = spawns.pick_random().instantiate()
-		enemy.global_position = global_position
+		enemy.position = position
 		enemy.angled_velocity = 100
 		World.current.enemies.add_child(enemy)
 		remaining_spawn_time = spawn_time

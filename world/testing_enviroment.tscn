@@ -33,7 +33,6 @@ world_size = Vector2(720, 720)
 [node name="Player" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_2pcqi")
-player_start = Vector2(348, 108)
 
 [node name="Enivroment" type="Node2D" parent="."]
 
