@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export
 var angle_speed = 3
 @export
-var angled_velocity = 105
+var angled_velocity:float = 105
 
 var current_health
 var angle = 0
@@ -25,7 +25,7 @@ func _process(delta):
 
 func move_to_angle(desired_angle: float, delta: float, ignore_physics:bool = false):
 	angle = rotate_toward(angle, desired_angle, angle_speed * delta)
-	var direction_to = Vector2(cos(angle), sin(angle)) * delta * angled_velocity
+	var direction_to = Vector2(cos(angle), sin(angle)) * delta * angled_velocity * global_scale
 
 	if ignore_physics || move_and_collide(Vector2.ZERO, true):
 			position += direction_to
@@ -44,7 +44,6 @@ func take_damage(amount:float=1) -> bool:
 
 func heal(amount:float=1) -> bool:
 	if health < current_health || is_equal_approx(health, current_health):
-		print('was at max health')
 		return false
 	current_health = max(current_health + amount, health)
 	return true

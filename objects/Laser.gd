@@ -20,7 +20,7 @@ var angle:
 		rotation = value
 
 func _physics_process(delta: float) -> void:
-	var direction_to = Vector2(cos(angle), sin(angle)) * delta * laser_velocity
+	var direction_to = Vector2(cos(angle), sin(angle)) * delta * global_scale * laser_velocity
 	var collision_info = move_and_collide(direction_to)
 	if collision_info:
 		if collision_info.get_collider() is Enemy && collision_info.get_collider().take_damage(damage):

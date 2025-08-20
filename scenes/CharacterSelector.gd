@@ -14,6 +14,9 @@ func _ready():
 		character_button.connect('pressed', func(): self.add_character(index))
 		%CharacterSelection.add_child(character_button)
 	%CharacterSelection.get_child(0).grab_focus()
+	var last_choosen = %CharacterSelection.get_child(%CharacterSelection.get_child_count()-1)
+	last_choosen.focus_neighbor_right = %Accept.get_path()
+	%Accept.focus_neighbor_left = last_choosen.get_path()
 func add_character(index):
 	if %SelectedCharacters.get_child_count() >= max_size:
 		return
@@ -25,7 +28,7 @@ func add_character(index):
 func remove_character(index):
 	selected_entities.remove_at(index)
 	%SelectedCharacters.remove_child(%SelectedCharacters.get_child(index))
-	%CharacterSelection.get_child(0).grab_focus()
+	%Accept.grab_focus()
 	
 func start_game():
 	if %SelectedCharacters.get_child_count() > max_size ||\

@@ -12,9 +12,12 @@ script = ExtResource("1_3d1ms")
 damage = 5
 haste = 0.5
 
-[node name="KanikiBody" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("2_mu60e")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x5off")
+
+[node name="BodyDirection" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="KanikiBody" type="Sprite2D" parent="BodyDirection"]
+texture_filter = 1
+texture = ExtResource("2_mu60e")

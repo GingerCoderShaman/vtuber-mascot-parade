@@ -6,8 +6,8 @@ var haste = 0
 var damage = 0
 
 func _ready() -> void:
-	haste = get_parent().haste
-	damage = get_parent().damage
+	haste = get_parent().get_parent().haste
+	damage = get_parent().get_parent().damage
 
 func attack(body: Node2D) -> void:
 	var seconds = Time.get_unix_time_from_system()

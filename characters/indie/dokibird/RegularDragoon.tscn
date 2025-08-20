@@ -34,6 +34,7 @@ collision_layer = 2
 script = ExtResource("1_q7nrk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_nkd81")
 
 [node name="Legs" type="AnimatedSprite2D" parent="."]

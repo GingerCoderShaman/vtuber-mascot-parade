@@ -25,3 +25,9 @@ https://www.youtube.com/watch?v=Zp7EiWFtRN0&ab_channel=GingerCoderShaman
 
 (part 7)
 https://www.youtube.com/watch?v=4wTgzw8Bggw&ab_channel=GingerCoderShaman
+
+(part 8) (I fell asleep on this stream, i dont count it)
+https://www.youtube.com/live/eiY4ANZRICQ
+
+(part 8.1)
+https://www.youtube.com/live/oR0Z0wY_euM

@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	var desired_angle = self.get_angle_to(tail.global_position)
 	move_to_angle(desired_angle, delta)
 
-func entity_entered(body: Node2D) -> void:
+func entity_entered(_body: Node2D) -> void:
 	queue_free()
 	var explosion = load('res://objects/Explosion.tscn').instantiate()
 	explosion.position = position

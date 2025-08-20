@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 	if target == null:
 		return
 
-	var desired_angle = self.get_angle_to(target.position)
+	var desired_angle = self.get_angle_to(target.global_position)
 	move_to_angle(desired_angle, delta)
 
 

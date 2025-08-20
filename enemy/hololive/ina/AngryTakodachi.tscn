@@ -1,13 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://27oau5umppgs"]
+[gd_scene load_steps=9 format=3 uid="uid://27oau5umppgs"]
 
 [ext_resource type="Script" uid="uid://blq435bbilj0f" path="res://enemy/hololive/ina/AngryTakodachi.gd" id="1_m7d5w"]
 [ext_resource type="Texture2D" uid="uid://rrobb3luch6" path="res://textures/hololive/ina/takodachi_halo_evil.png" id="1_xu4jl"]
 [ext_resource type="Texture2D" uid="uid://bqgkwegsdcld1" path="res://textures/hololive/ina/angry_takodachi_base.png" id="2_m7d5w"]
 [ext_resource type="Texture2D" uid="uid://dhpaxfsqmugxg" path="res://textures/hololive/ina/angry_takodachi_moved.png" id="3_1xgsf"]
 [ext_resource type="Script" uid="uid://cu6hrbmtg2cos" path="res://characters/generic/animation_player.gd" id="4_6y401"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6y401"]
-radius = 12.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hhhdj"]
 animations = [{
@@ -23,14 +20,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6y401"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m7d5w"]
+radius = 12.0
+
 [node name="AngryTakodachi" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_m7d5w")
 angle_speed = 1
-angled_velocity = 250
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_6y401")
 
 [node name="Halo" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -48,6 +47,9 @@ collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_6y401")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m7d5w")
 
 [connection signal="body_entered" from="Area2D" to="." method="track_overlap"]
 [connection signal="body_exited" from="Area2D" to="." method="untrack_overlap"]
