@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7khb6etoeoxu"]
+
+[ext_resource type="Script" uid="uid://bimp1rc1o4ic8" path="res://objects/pipe.gd" id="1_dtktl"]
+[ext_resource type="Texture2D" uid="uid://b4tgnm03ifthn" path="res://textures/indie/neurosama/pipe.png" id="2_hkg06"]
+
+[node name="Pipe" type="CharacterBody2D"]
+script = ExtResource("1_dtktl")
+
+[node name="Pipe" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, 0)
+texture = ExtResource("2_hkg06")

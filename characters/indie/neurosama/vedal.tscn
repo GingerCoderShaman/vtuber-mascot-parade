@@ -1,10 +1,42 @@
-[gd_scene load_steps=9 format=3 uid="uid://3mleqnhrgn2q"]
+[gd_scene load_steps=12 format=3 uid="uid://3mleqnhrgn2q"]
 
-[ext_resource type="Script" uid="uid://m8uu7uvs1xj6" path="res://characters/Character.gd" id="1_p7sye"]
+[ext_resource type="Script" uid="uid://cpye4dx2284fd" path="res://characters/indie/neurosama/Vedal.gd" id="1_5a0lh"]
 [ext_resource type="Texture2D" uid="uid://dbjseyeqjefby" path="res://textures/indie/neurosama/vedal_belly.png" id="2_5a0lh"]
 [ext_resource type="Texture2D" uid="uid://dq88lhg2a0pdw" path="res://textures/indie/neurosama/vedal_front_leg.png" id="3_yshap"]
 [ext_resource type="Texture2D" uid="uid://tuysmn8lh5vf" path="res://textures/indie/neurosama/Vedal_Body.png" id="4_rlern"]
 [ext_resource type="Texture2D" uid="uid://dppfmcv28pqq0" path="res://textures/indie/neurosama/vedal_head.png" id="5_0fty0"]
+[ext_resource type="Script" uid="uid://4n6k84y4fqk4" path="res://characters/generic/animation_player.gd" id="6_5a0lh"]
+[ext_resource type="AudioStream" uid="uid://b6oq7s3q6xgj3" path="res://sounds/neurosama/pipe_hit/426432__dersinnsspace__tube-hit-03-mid.wav" id="7_yshap"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5a0lh"]
+radius = 12.0416
+
+[sub_resource type="Animation" id="Animation_p7gkm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/VedalFrontLeg:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/VedalBackLeg:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, -2)]
+}
 
 [sub_resource type="Animation" id="Animation_t6id5"]
 resource_name = "walking"
@@ -18,53 +50,26 @@ markers = [{
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VedalFrontLeg:position")
+tracks/0/path = NodePath("Node2D/VedalFrontLeg:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1e+06, 1e+06, 1e+06),
+"times": PackedFloat32Array(0, 0.0666667, 0.166667, 0.266667),
+"transitions": PackedFloat32Array(118129, 1e+06, 1e+06, 1e+06),
 "update": 0,
-"values": [Vector2(-1, -2), Vector2(-1, -2), Vector2(0, -2), Vector2(-1, -2)]
+"values": [Vector2(-1, -2), Vector2(0, -2), Vector2(-1, -2), Vector2(-1, -2)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("VedalBackLeg:position")
+tracks/1/path = NodePath("Node2D/VedalBackLeg:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"transitions": PackedFloat32Array(15825.9, 5792.62, 15286.8),
 "update": 0,
 "values": [Vector2(10, -2), Vector2(9, -2), Vector2(10, -2)]
-}
-
-[sub_resource type="Animation" id="Animation_p7gkm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VedalFrontLeg:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1, -2)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VedalBackLeg:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(10, -2)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gw65f"]
@@ -74,29 +79,36 @@ _data = {
 }
 
 [node name="Vedal" type="CharacterBody2D"]
-script = ExtResource("1_p7sye")
-metadata/_custom_type_script = "uid://m8uu7uvs1xj6"
+collision_layer = 2
+script = ExtResource("1_5a0lh")
+haste = 6.0
 
-[node name="VedalBelly" type="Sprite2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5a0lh")
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="VedalBelly" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
 position = Vector2(0, -2)
 texture = ExtResource("2_5a0lh")
 
-[node name="VedalBackLeg" type="Sprite2D" parent="."]
+[node name="VedalBackLeg" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
 position = Vector2(10, -2)
 texture = ExtResource("3_yshap")
 
-[node name="VedalFrontLeg" type="Sprite2D" parent="."]
+[node name="VedalFrontLeg" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
 position = Vector2(-1, -2)
 texture = ExtResource("3_yshap")
 
-[node name="VedalBody" type="Sprite2D" parent="."]
+[node name="VedalBody" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
 texture = ExtResource("4_rlern")
 
-[node name="VedalHead" type="Sprite2D" parent="."]
+[node name="VedalHead" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
 position = Vector2(-7, -4.77001)
 scale = Vector2(0.75, 0.71875)
@@ -106,3 +118,9 @@ texture = ExtResource("5_0fty0")
 libraries = {
 &"": SubResource("AnimationLibrary_gw65f")
 }
+script = ExtResource("6_5a0lh")
+animation_name = "walking"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_yshap")

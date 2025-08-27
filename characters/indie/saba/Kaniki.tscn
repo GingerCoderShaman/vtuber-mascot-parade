@@ -10,7 +10,7 @@ radius = 7.07107
 collision_layer = 2
 script = ExtResource("1_3d1ms")
 damage = 5
-haste = 0.5
+haste = 4.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x5off")

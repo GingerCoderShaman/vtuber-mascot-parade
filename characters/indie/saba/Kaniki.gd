@@ -16,6 +16,10 @@ func _ready() -> void:
 	%BodyDirection.add_child(left_arm)
 	%BodyDirection.add_child(right_arm)
 
+func do_action():
+	haste_countdown = 0
+
+
 func _process(delta: float) -> void:
 	super._process(delta)
 	if in_game:

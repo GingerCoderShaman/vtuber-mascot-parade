@@ -1,6 +1,8 @@
 class_name RegularDragoon
 extends Character
 
+var laser = preload('res://objects/FriendlyLaser.tscn')
+
 func do_action():
 	var enemy = null
 
@@ -11,8 +13,7 @@ func do_action():
 	if enemy == null:
 		return
 
-	var laser = load('res://objects/Laser.tscn').instantiate()
-	laser.set_collision_mask_value(Enemy.HIT_BOX_LAYER, true)
+	var laser = laser.instantiate()
 	laser.rotation = position.angle_to_point(enemy.position)
 	laser.position = position
 	World.current.objects.add_child(laser)

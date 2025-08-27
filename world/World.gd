@@ -13,8 +13,9 @@ var game_over = false
 @onready var player = $Player
 
 func _ready() -> void:
-	get_viewport().size_changed.connect(fit_screen)
-	fit_screen()
+	pass
+	#get_viewport().size_changed.connect(fit_screen)
+	#fit_screen()
 	
 func _process(delta: float) -> void:
 	if !game_over:

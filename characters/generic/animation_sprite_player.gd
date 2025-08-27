@@ -1,4 +1,4 @@
-extends AnimationPlayer
+extends AnimatedSprite2D
 
 @export
 var animation_name = 'default'

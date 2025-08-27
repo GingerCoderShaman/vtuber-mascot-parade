@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cva5enyoyhyq" path="res://enemy/indie/dokibird/AngryDragoon.gd" id="1_3ibs0"]
 [ext_resource type="Texture2D" uid="uid://cqe0jfeas1wp1" path="res://textures/indie/dragoons/regular_dragoon_legs_standing.png" id="2_3ibs0"]
 [ext_resource type="Texture2D" uid="uid://bmkywuvc8p71m" path="res://textures/indie/dragoons/regular_dragoon_legs_walk1.png" id="3_i80dw"]
-[ext_resource type="Script" uid="uid://cu6hrbmtg2cos" path="res://characters/generic/animation_player.gd" id="4_6y401"]
+[ext_resource type="Script" uid="uid://cu6hrbmtg2cos" path="res://characters/generic/animation_sprite_player.gd" id="4_6y401"]
 [ext_resource type="Texture2D" uid="uid://bhd71t4p67qtn" path="res://textures/indie/dragoons/regular_dragoon_legs_walk2.png" id="4_d85nv"]
 [ext_resource type="Texture2D" uid="uid://btvra1gciwsan" path="res://textures/indie/dragoons/angry_dragoon.png" id="6_7mt5s"]
 
@@ -32,6 +32,7 @@ animations = [{
 [node name="AngryDragoon" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_3ibs0")
+haste = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_i80dw")
@@ -45,13 +46,3 @@ script = ExtResource("4_6y401")
 [node name="Body" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("6_7mt5s")
-
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_i80dw")
-
-[connection signal="body_entered" from="Area2D" to="." method="track_overlap"]
-[connection signal="body_exited" from="Area2D" to="." method="untrack_overlap"]

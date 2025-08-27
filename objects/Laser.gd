@@ -8,7 +8,7 @@ var laser_velocity:float = 150
 var lifetime:float = 10
 
 @export
-var damage:int = 1
+var damage:float = 2
 
 @onready
 var remaining_lifetime:float = lifetime
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	var direction_to = Vector2(cos(angle), sin(angle)) * delta * global_scale * laser_velocity
 	var collision_info = move_and_collide(direction_to)
 	if collision_info:
-		if collision_info.get_collider() is Enemy && collision_info.get_collider().take_damage(damage):
+		if collision_info.get_collider() is LivingEntity && collision_info.get_collider().take_damage(damage*remaining_lifetime/lifetime):
 			queue_free()
 			return
 		var change = direction_to.bounce(collision_info.get_normal())
