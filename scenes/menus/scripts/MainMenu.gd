@@ -4,7 +4,7 @@ func _ready() -> void:
 	%NewGame.grab_focus()
 
 func _on_new_game_pressed() -> void:
-	var new_world = load("res://scenes/SelectorMenu.tscn").instantiate()
+	var new_world = load("res://scenes/menus/Structure/SelectorMenu.tscn").instantiate()
 	get_parent().add_child(new_world)
 	queue_free()
 

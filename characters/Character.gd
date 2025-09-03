@@ -72,5 +72,23 @@ func process_actions(delta:float):
 		haste_countdown = haste
 		do_action()
 
+func get_role():
+	return "Missing No"
+
+func get_fandom():
+	return "Missing No"
+	
+func get_description():
+	return "Missing No"
+	
+func get_role_skill_name():
+	return "Dmg/Heal"
+
+func get_role_skill_value():
+	return "Missing No"
+
+func get_character_nane():
+	return "Missing No"
+
 func do_action():
 	pass

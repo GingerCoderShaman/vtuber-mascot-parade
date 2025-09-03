@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://dbh47uo1soxxb"]
+
+[ext_resource type="Script" uid="uid://dpgj0vxoj6oau" path="res://characters/hololive/irys/HopeSoda.gd" id="1_88gg3"]
+[ext_resource type="Texture2D" uid="uid://bqpq8dglpqxkg" path="res://textures/hololive/irys/HopeSoda.png" id="2_80heq"]
+[ext_resource type="Texture2D" uid="uid://bp5b021eh7gkk" path="res://textures/hololive/irys/stage_0.png" id="3_rp2xy"]
+[ext_resource type="Texture2D" uid="uid://cbv4etnbiagbs" path="res://textures/hololive/irys/stage_1.png" id="4_n7f2x"]
+[ext_resource type="Texture2D" uid="uid://bkvt77e7ba868" path="res://textures/hololive/irys/stage_2.png" id="5_kc24y"]
+[ext_resource type="Texture2D" uid="uid://civrpixi6fkaq" path="res://textures/hololive/irys/stage_3.png" id="6_ndb8p"]
+[ext_resource type="Texture2D" uid="uid://cerc86rnlxtwv" path="res://textures/hololive/irys/stage_4.png" id="7_utgt8"]
+[ext_resource type="Texture2D" uid="uid://bt3jnmf0cq6tn" path="res://textures/hololive/irys/stage_5.png" id="8_d1cs4"]
+[ext_resource type="Texture2D" uid="uid://dk8877skprlw" path="res://textures/hololive/irys/stage_6.png" id="9_sqq2m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mx533"]
+radius = 12.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_477kf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rp2xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n7f2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kc24y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ndb8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_utgt8")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_d1cs4")
+}, {
+"duration": 4.0,
+"texture": ExtResource("9_sqq2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rp2xy")
+}],
+"loop": false,
+"name": &"HopeExplode",
+"speed": 20.0
+}]
+
+[node name="HopeSoda" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_88gg3")
+haste = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mx533")
+
+[node name="HopeSoda" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(0, -1)
+texture = ExtResource("2_80heq")
+
+[node name="Hope" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_477kf")
+animation = &"HopeExplode"
+frame = 7
+frame_progress = 1.0

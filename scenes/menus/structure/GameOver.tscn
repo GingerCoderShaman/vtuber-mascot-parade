@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://do4g33k3pvnk3"]
+[gd_scene load_steps=5 format=3 uid="uid://do4g33k3pvnk3"]
 
-[ext_resource type="Script" uid="uid://1sd2g7xwh50r" path="res://scenes/GameOver.gd" id="1_6bcno"]
-[ext_resource type="Script" uid="uid://b52inkpmsaq52" path="res://scenes/fit_to_screen.gd" id="2_qae0b"]
+[ext_resource type="Script" uid="uid://1sd2g7xwh50r" path="res://scenes/menus/scripts/GameOver.gd" id="1_xtjba"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bcno"]
 
@@ -13,7 +12,7 @@ font_size = 64
 font_color = Color(1, 0, 0, 1)
 
 [node name="GameOver" type="CanvasLayer"]
-script = ExtResource("1_6bcno")
+script = ExtResource("1_xtjba")
 
 [node name="MainControl" type="Control" parent="."]
 unique_name_in_owner = true
@@ -33,7 +32,6 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 theme = SubResource("Theme_6bcno")
-script = ExtResource("2_qae0b")
 
 [node name="PanelContainer" type="PanelContainer" parent="MainControl"]
 layout_mode = 0

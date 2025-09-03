@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://fpfsxaq5akk3"]
+
+[ext_resource type="Script" uid="uid://2j4rd4nhlejv" path="res://scenes/character_sheets/scripts/CharacterSheet.gd" id="1_8q6co"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8q6co"]
+font_size = 26
+
+[node name="CharacterSheet" type="Panel"]
+anchors_preset = -1
+anchor_right = 0.382
+anchor_bottom = 0.424
+offset_right = 34.936
+offset_bottom = 109.248
+script = ExtResource("1_8q6co")
+
+[node name="TXTName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 87.0
+offset_bottom = 44.0
+text = "Name"
+label_settings = SubResource("LabelSettings_8q6co")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 52.0
+offset_right = 467.0
+offset_bottom = 350.0
+columns = 2
+
+[node name="LabelHealth" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Health: "
+
+[node name="TXTHealth" type="Label" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="LabelEnergy" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Time:"
+
+[node name="TXTEnergy" type="Label" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="LabelRoleSkill" type="Label" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dmg/Healing:"
+
+[node name="TXTRoleSkill" type="Label" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="LabelFandom" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Fandom:"
+
+[node name="TXTFandom" type="Label" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Missing No."
+
+[node name="LabelRole" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Role:"
+
+[node name="TXTRole" type="Label" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Missing No."
+
+[node name="LabelDescription" type="Label" parent="."]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 186.0
+offset_right = 108.0
+offset_bottom = 209.0
+text = "Description:"
+
+[node name="Description" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 14.0
+offset_top = 211.0
+offset_right = 463.0
+offset_bottom = 260.0
+text = "Missing description of a fandom gone awire!! fewfawefafe eefawefefwaefaweffe eefawe efeaaefwafew"
+autowrap_mode = 2

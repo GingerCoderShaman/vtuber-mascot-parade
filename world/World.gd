@@ -45,7 +45,7 @@ func _exit_tree() -> void:
 func check_game_over():
 	if %Player.get_children().size() == 0:
 		game_over = true
-		get_parent().add_child(load("res://scenes/GameOver.tscn").instantiate())
+		get_parent().add_child(load("res://scenes/menus/structure/GameOver.tscn").instantiate())
 		
 func check_delete_game(delta):
 	modulate.a -= delta/10

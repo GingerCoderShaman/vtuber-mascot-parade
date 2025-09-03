@@ -24,7 +24,7 @@ func _on_new_game_pressed() -> void:
 		build_new_world()
 
 func build_new_world():
-	var new_world = load("res://scenes/SelectorMenu.tscn").instantiate()
+	var new_world = load("res://scenes/menus/structure/SelectorMenu.tscn").instantiate()
 	get_parent().add_child(new_world)
 	queue_free()
 
@@ -37,6 +37,6 @@ func _on_main_menu_pressed() -> void:
 		build_main_menu()
 
 func build_main_menu():
-	var new_world = load("res://scenes/MainMenu.tscn").instantiate()
+	var new_world = load("res://scenes/menus/structure/MainMenu.tscn").instantiate()
 	get_parent().add_child(new_world)
 	queue_free()

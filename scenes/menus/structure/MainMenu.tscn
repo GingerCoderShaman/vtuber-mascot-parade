@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxpgm62m72pp7"]
 
-[ext_resource type="Script" uid="uid://bw3vyfcxhv2g3" path="res://scenes/main_menu.gd" id="1_yqorp"]
+[ext_resource type="Script" uid="uid://bw3vyfcxhv2g3" path="res://scenes/menus/scripts/MainMenu.gd" id="1_yqorp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvctj"]
 
@@ -65,7 +65,7 @@ layout_mode = 0
 offset_left = 169.0
 offset_top = 100.0
 offset_right = 318.0
-offset_bottom = 134.0
+offset_bottom = 139.0
 focus_next = NodePath("../Exit")
 focus_previous = NodePath("../Exit")
 text = "New Game"
