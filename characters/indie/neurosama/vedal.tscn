@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://tuysmn8lh5vf" path="res://textures/indie/neurosama/Vedal_Body.png" id="4_rlern"]
 [ext_resource type="Texture2D" uid="uid://dppfmcv28pqq0" path="res://textures/indie/neurosama/vedal_head.png" id="5_0fty0"]
 [ext_resource type="Script" uid="uid://4n6k84y4fqk4" path="res://characters/generic/animation_player.gd" id="6_5a0lh"]
-[ext_resource type="AudioStream" uid="uid://b6oq7s3q6xgj3" path="res://sounds/neurosama/pipe_hit/426432__dersinnsspace__tube-hit-03-mid.wav" id="7_yshap"]
+[ext_resource type="AudioStream" uid="uid://b6oq7s3q6xgj3" path="res://sounds/indie/neurosama/pipe_hit/426432__dersinnsspace__tube-hit-03-mid.wav" id="7_yshap"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5a0lh"]
 radius = 12.0416

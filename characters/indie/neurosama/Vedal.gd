@@ -10,7 +10,7 @@ func get_role():
 
 func get_fandom():
 	return "Neuro-sama & Evil Neuro"
-	
+
 func get_description():
 	return "Neurosama summons pipes to land on enemies to help protect Vedal"
 
@@ -19,13 +19,13 @@ func get_role_skill_name():
 
 func get_role_skill_value():
 	return str(damage) + " Per Pipe"
-	
+
 func get_character_nane():
 	return "Vedal, the turtle"
 
 func do_action():
 	if World.current.enemies.get_child_count() == 0:
-		return 
+		return
 	var picked = World.current.enemies.get_children().pick_random()
 	%AudioStreamPlayer2D.play()
 	if picked.take_damage(damage):

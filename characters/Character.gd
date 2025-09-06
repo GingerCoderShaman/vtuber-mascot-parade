@@ -16,6 +16,7 @@ func _ready() -> void:
 	add_child(energy_bar)
 	if in_game:
 		energy_bar.max_energy = haste
+	haste_countdown = randf_range(0, haste)
 
 func _process(delta: float) -> void:
 	super._process(delta)
@@ -72,6 +73,21 @@ func process_actions(delta:float):
 		haste_countdown = haste
 		do_action()
 
+func take_damage(amount:float=1, source = null) -> bool:
+	var player = get_parent()
+	for guard in player.damage_guard:
+		if !is_instance_valid(guard):
+			continue
+		var value = guard.defend(amount, source)
+		if value is not float:
+			return false
+		else:
+			amount = value
+			if value <= 0:
+				return true
+	
+	return super.take_damage(amount, source)
+	
 func get_role():
 	return "Missing No"
 

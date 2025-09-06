@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://chpv30mp28r50"]
+[gd_scene load_steps=8 format=3 uid="uid://chpv30mp28r50"]
 
 [ext_resource type="Script" uid="uid://bpxaqmaqmwqtl" path="res://characters/indie/henya/rubixcube.gd" id="1_bs2fn"]
 [ext_resource type="Texture2D" uid="uid://exhanwfcal15" path="res://textures/indie/henya/rubixcube_explode.png" id="2_0aj1o"]
 [ext_resource type="Texture2D" uid="uid://cbf611jplkmx3" path="res://textures/indie/henya/rubixcube.png" id="2_oxcb3"]
 [ext_resource type="Script" uid="uid://cw3n44efowqd" path="res://characters/indie/henya/henya_cube_explosion.gd" id="3_uihsd"]
+[ext_resource type="AudioStream" uid="uid://dttt4rmabg5gd" path="res://sounds/indie/generic/explosion/482992__v-ktor__large-explosion-2.wav" id="5_uihsd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7jklh"]
 radius = 14.2089
@@ -39,6 +40,11 @@ shape = SubResource("CircleShape2D_4qnhc")
 [node name="Body" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_oxcb3")
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_uihsd")
+volume_db = -10.0
 
 [connection signal="body_entered" from="RubixcubeExplode/Area2D" to="." method="track_overlap"]
 [connection signal="body_exited" from="RubixcubeExplode/Area2D" to="." method="untrack_overlap"]

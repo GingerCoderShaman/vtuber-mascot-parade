@@ -1,6 +1,6 @@
 extends Node2D
 
-var last_attack = 0 
+var last_attack = 0
 
 var parent
 
@@ -11,6 +11,6 @@ func attack(body: Node2D) -> void:
 	if parent.haste_countdown == 0:
 		parent.haste_countdown = parent.haste
 		%AnimationPlayer.play('attack')
-		body.take_damage(parent.damage)
+		body.take_damage(parent.damage, self)
 
-		
+

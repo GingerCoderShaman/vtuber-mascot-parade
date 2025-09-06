@@ -40,3 +40,6 @@ https://www.youtube.com/watch?v=ZIZLUjQPVzU&ab_channel=GingerCoderShaman
 
 (part 11)
 https://www.youtube.com/watch?v=qVZhsRe-dsg&ab_channel=GingerCoderShaman
+
+(part 12)
+https://www.youtube.com/watch?v=gMMQZOB4V5A&ab_channel=GingerCoderShaman

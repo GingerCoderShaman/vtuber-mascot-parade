@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://q3o6m3u5hq5o"]
+[gd_scene load_steps=10 format=3 uid="uid://q3o6m3u5hq5o"]
 
 [ext_resource type="Script" uid="uid://b6q1htns51xh7" path="res://scenes/menus/scripts/SelectorMenu.gd" id="1_c3o3f"]
 [ext_resource type="PackedScene" uid="uid://btk5ue5k11f22" path="res://characters/indie/dokibird/RegularDragoon.tscn" id="2_ihlem"]
@@ -8,10 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://3mleqnhrgn2q" path="res://characters/indie/neurosama/vedal.tscn" id="6_tin0t"]
 [ext_resource type="PackedScene" uid="uid://fpfsxaq5akk3" path="res://scenes/character_sheets/structure/CharacterSheet.tscn" id="7_ihlem"]
 [ext_resource type="PackedScene" uid="uid://dbh47uo1soxxb" path="res://characters/hololive/irys/HopeSoda.tscn" id="7_xqctb"]
+[ext_resource type="PackedScene" uid="uid://cvywtndsvu2jg" path="res://characters/indie/matara_kan/momo.tscn" id="8_u68mm"]
 
 [node name="SelectorMenu" type="CanvasLayer"]
 script = ExtResource("1_c3o3f")
-selectable_characters = Array[PackedScene]([ExtResource("2_ihlem"), ExtResource("3_xqctb"), ExtResource("4_u68mm"), ExtResource("5_gliu8"), ExtResource("6_tin0t"), ExtResource("7_xqctb")])
+selectable_characters = Array[PackedScene]([ExtResource("2_ihlem"), ExtResource("3_xqctb"), ExtResource("4_u68mm"), ExtResource("5_gliu8"), ExtResource("6_tin0t"), ExtResource("7_xqctb"), ExtResource("8_u68mm")])
 
 [node name="CharacterSelection" type="HBoxContainer" parent="."]
 unique_name_in_owner = true

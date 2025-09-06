@@ -37,7 +37,7 @@ func process_effect(body, delta):
 	if body is Heal:
 		body.heal_body(self)
 		return
-	
-	if (body is Character && body.take_damage(delta)) ||\
+
+	if (body is Character && body.take_damage(delta, self)) ||\
 		(body is Enemy && body.heal(delta * healing)):
-		take_damage(delta * healing)
+		take_damage(delta * healing, self)

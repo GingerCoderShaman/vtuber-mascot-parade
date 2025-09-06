@@ -36,7 +36,7 @@ func move_to_angle(desired_angle: float, delta: float, ignore_physics:bool = fal
 		var change = direction_to.bounce(collision_info.get_normal())
 		angle = atan2(change.y, change.x)
 
-func take_damage(amount:float=1) -> bool:
+func take_damage(amount:float=1, _source = null) -> bool:
 	current_health -= amount
 	if current_health <= 0:
 		queue_free()
@@ -65,7 +65,7 @@ func track_overlap(body):
 	if body == self:
 		return
 	tracked_entities.append(body)
-	
+
 func untrack_overlap(body):
 	if body == self:
 		return

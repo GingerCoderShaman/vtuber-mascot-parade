@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d04afmxlvbwgd"]
+[gd_scene load_steps=6 format=3 uid="uid://d04afmxlvbwgd"]
 
 [ext_resource type="Script" uid="uid://bxs0a27l7m4fr" path="res://objects/Laser.gd" id="1_wqbej"]
 [ext_resource type="Texture2D" uid="uid://bi2qtl8na4lr4" path="res://textures/generic/laser.png" id="2_2dchi"]
+[ext_resource type="AudioStream" uid="uid://dx4lpwxoiuwu5" path="res://sounds/indie/generic/laser/681958__jakeamt__fx_boss_laser_shot_3.wav" id="3_mrq0n"]
+[ext_resource type="AudioStream" uid="uid://cris1d7iglsuc" path="res://sounds/indie/generic/laser/660404__mattbrs__laser-gunshot.wav" id="4_832g0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8q724"]
 size = Vector2(5.25, 8)
@@ -20,3 +22,13 @@ texture = ExtResource("2_2dchi")
 position = Vector2(1, -0.375)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_8q724")
+
+[node name="OnFire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mrq0n")
+autoplay = true
+
+[node name="OnHit" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_832g0")
+volume_db = -12.0
+max_polyphony = 5

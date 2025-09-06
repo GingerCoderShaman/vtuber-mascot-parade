@@ -10,6 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_equal_approx($Explosion_Body.modulate.a, 0):
 		queue_free()
-		
+
 func deal_damage(body):
 	body.take_damage(damage)

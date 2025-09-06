@@ -9,7 +9,8 @@ func do_action():
 		return
 	%RubixcubeExplode.modulate.a = 1
 	for entity in tracked_entities:
-		entity.take_damage(damage)
+		%ExplosionSound.play()
+		entity.take_damage(damage, self)
 
 func get_role():
 	return "Explosive Defensive DPS"
