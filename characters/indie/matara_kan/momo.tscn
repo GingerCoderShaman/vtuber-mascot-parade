@@ -32,6 +32,11 @@ health = 20.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o5j6p")
 
+[node name="MomoWingLeft" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-15, -1)
+texture = ExtResource("2_naiwo")
+
 [node name="MomoWingRight" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(14, -1)
@@ -39,15 +44,10 @@ rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("2_naiwo")
 
-[node name="MomoWingLeft" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(-15, -1)
-texture = ExtResource("2_naiwo")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 5
 sprite_frames = SubResource("SpriteFrames_rnfl2")
 animation = &"Walking"
-frame_progress = 0.273146
+frame_progress = 0.997699
 script = ExtResource("5_iyo7w")
 animation_name = "Walking"

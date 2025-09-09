@@ -1,10 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgwly6pw4ffjm"]
+[gd_scene load_steps=15 format=3 uid="uid://bgwly6pw4ffjm"]
 
 [ext_resource type="Script" uid="uid://broxfil5ackat" path="res://characters/hololive/ina/Takodachi.gd" id="1_fc3vl"]
 [ext_resource type="Texture2D" uid="uid://jin8deslfl3t" path="res://textures/hololive/ina/takodachi_halo.png" id="2_k4k4w"]
-[ext_resource type="Texture2D" uid="uid://20us4e26qtxh" path="res://textures/hololive/ina/takodachi_base.png" id="3_r75hq"]
-[ext_resource type="Texture2D" uid="uid://brvmxerk58ib1" path="res://textures/hololive/ina/takodachi_moved.png" id="4_1gtcx"]
+[ext_resource type="Texture2D" uid="uid://dgmxb40y5htrn" path="res://textures/hololive/ina/takodachi_base_v2_down.png" id="3_1gtcx"]
+[ext_resource type="Texture2D" uid="uid://cni06115ql2yh" path="res://textures/hololive/ina/takodachi_base_v2_right.png" id="3_q4fys"]
+[ext_resource type="Texture2D" uid="uid://gml4dirhaevm" path="res://textures/hololive/ina/ina_legs_2.png" id="4_a2nmb"]
+[ext_resource type="Script" uid="uid://ddf8eo8ldre6c" path="res://characters/generic/VisiableWhenDirection.gd" id="4_ryitp"]
+[ext_resource type="Texture2D" uid="uid://cx3euoqfkdyi4" path="res://textures/hololive/ina/takodachi_base_v2_up.png" id="5_hc0o6"]
 [ext_resource type="Script" uid="uid://cu6hrbmtg2cos" path="res://characters/generic/animation_sprite_player.gd" id="5_k4k4w"]
+[ext_resource type="Texture2D" uid="uid://dr7h3qijgabiu" path="res://textures/hololive/ina/ina_legs_3.png" id="5_ryitp"]
+[ext_resource type="Texture2D" uid="uid://ccdsg6bsy276g" path="res://textures/hololive/ina/ina_legs_1.png" id="6_0pbw5"]
+[ext_resource type="Texture2D" uid="uid://b6x7f5b710318" path="res://textures/hololive/ina/takodachi_base_v2_left.png" id="6_sbb4f"]
+[ext_resource type="Texture2D" uid="uid://ckymk60rebgqt" path="res://textures/hololive/ina/ina_legs_4.png" id="7_a2nmb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k4k4w"]
 radius = 12.0
@@ -13,14 +20,20 @@ radius = 12.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_r75hq")
+"texture": ExtResource("6_0pbw5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_1gtcx")
+"texture": ExtResource("4_a2nmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ryitp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a2nmb")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [node name="Takodachi" type="CharacterBody2D"]
@@ -35,10 +48,37 @@ shape = SubResource("CircleShape2D_k4k4w")
 
 [node name="Halo" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -2)
 texture = ExtResource("2_k4k4w")
+
+[node name="TakodachiBaseV2Right" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 3
+texture = ExtResource("3_q4fys")
+script = ExtResource("4_ryitp")
+direction = 3
+
+[node name="TakodachiBaseV2Up" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 3
+texture = ExtResource("5_hc0o6")
+script = ExtResource("4_ryitp")
+direction = 0
+
+[node name="TakodachiBaseV2Left" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 3
+texture = ExtResource("6_sbb4f")
+script = ExtResource("4_ryitp")
+direction = 2
+
+[node name="TakodachiBaseV2Down" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("3_1gtcx")
+script = ExtResource("4_ryitp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_74xwd")
-frame_progress = 0.0810617
+frame_progress = 0.268895
 script = ExtResource("5_k4k4w")

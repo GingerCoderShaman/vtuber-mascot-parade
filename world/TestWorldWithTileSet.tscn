@@ -1,14 +1,51 @@
-[gd_scene load_steps=16 format=4 uid="uid://0d53cwql5fn2"]
+[gd_scene load_steps=23 format=4 uid="uid://0d53cwql5fn2"]
 
 [ext_resource type="Script" uid="uid://dhy4u2bq5aq2k" path="res://world/World.gd" id="1_gh8rh"]
 [ext_resource type="Script" uid="uid://bwm0nal68tatf" path="res://world/PlayerHandler.gd" id="2_e8tsc"]
 [ext_resource type="Script" uid="uid://n8bdti25fg8k" path="res://world/Spawner.gd" id="3_e8tsc"]
-[ext_resource type="PackedScene" uid="uid://sq0w442c01wi" path="res://enemy/indie/dokibird/AngryDragoon.tscn" id="4_54sw2"]
+[ext_resource type="Script" uid="uid://c30df5eddtyb" path="res://world/EnemyWave.gd" id="4_54sw2"]
 [ext_resource type="PackedScene" uid="uid://27oau5umppgs" path="res://enemy/hololive/ina/AngryTakodachi.tscn" id="4_gnvh5"]
 [ext_resource type="PackedScene" uid="uid://cltqm5nlopcfo" path="res://enemy/indie/henya/rubixcube_evil.tscn" id="6_50fip"]
+[ext_resource type="PackedScene" uid="uid://sq0w442c01wi" path="res://enemy/indie/dokibird/AngryDragoon.tscn" id="6_w3h10"]
 [ext_resource type="Shader" uid="uid://cnkmv2ctvmn6y" path="res://shaders/water.gdshader" id="7_54sw2"]
 [ext_resource type="Texture2D" uid="uid://cbafroo3d3xag" path="res://textures/tilesets/water.png" id="8_gnvh5"]
 [ext_resource type="Texture2D" uid="uid://bf75id1ojqkyh" path="res://textures/map_assets/turtle_house.png" id="9_50fip"]
+
+[sub_resource type="Resource" id="Resource_uojo3"]
+script = ExtResource("4_54sw2")
+enemies = Array[PackedScene]([ExtResource("4_gnvh5"), ExtResource("4_gnvh5"), ExtResource("4_gnvh5"), ExtResource("4_gnvh5"), ExtResource("4_gnvh5")])
+spawn_time = 1.5
+metadata/_custom_type_script = "uid://c30df5eddtyb"
+
+[sub_resource type="Resource" id="Resource_ni6x4"]
+script = ExtResource("4_54sw2")
+enemies = Array[PackedScene]([ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10")])
+spawn_time = 1.5
+metadata/_custom_type_script = "uid://c30df5eddtyb"
+
+[sub_resource type="Resource" id="Resource_ry2k1"]
+script = ExtResource("4_54sw2")
+enemies = Array[PackedScene]([ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_50fip"), ExtResource("4_gnvh5"), ExtResource("4_gnvh5")])
+spawn_time = 1.5
+metadata/_custom_type_script = "uid://c30df5eddtyb"
+
+[sub_resource type="Resource" id="Resource_w3h10"]
+script = ExtResource("4_54sw2")
+enemies = Array[PackedScene]([ExtResource("4_gnvh5"), ExtResource("4_gnvh5"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_50fip"), ExtResource("6_w3h10")])
+spawn_time = 0.5
+metadata/_custom_type_script = "uid://c30df5eddtyb"
+
+[sub_resource type="Resource" id="Resource_lp7kk"]
+script = ExtResource("4_54sw2")
+enemies = Array[PackedScene]([ExtResource("6_w3h10"), ExtResource("4_gnvh5"), ExtResource("6_w3h10"), ExtResource("4_gnvh5"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10")])
+spawn_time = 0.5
+metadata/_custom_type_script = "uid://c30df5eddtyb"
+
+[sub_resource type="Resource" id="Resource_piq7u"]
+script = ExtResource("4_54sw2")
+enemies = Array[PackedScene]([ExtResource("6_50fip"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("4_gnvh5"), ExtResource("6_w3h10"), ExtResource("6_50fip"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_50fip"), ExtResource("6_w3h10"), ExtResource("6_50fip"), ExtResource("6_w3h10"), ExtResource("4_gnvh5"), ExtResource("6_w3h10"), ExtResource("6_50fip")])
+spawn_time = 0.1
+metadata/_custom_type_script = "uid://c30df5eddtyb"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gnvh5"]
 shader = ExtResource("7_54sw2")
@@ -313,7 +350,9 @@ unique_name_in_owner = true
 
 [node name="Spawners" type="Node2D" parent="."]
 script = ExtResource("3_e8tsc")
-spawns = Array[PackedScene]([ExtResource("4_gnvh5"), ExtResource("4_54sw2"), ExtResource("6_50fip")])
+starting_spawn_time = 5.0
+waves = Array[ExtResource("4_54sw2")]([SubResource("Resource_uojo3"), SubResource("Resource_ni6x4"), SubResource("Resource_ry2k1"), SubResource("Resource_w3h10"), SubResource("Resource_lp7kk"), SubResource("Resource_piq7u")])
+infinite = true
 
 [node name="Node2D" type="Node2D" parent="Spawners"]
 position = Vector2(605, 255)

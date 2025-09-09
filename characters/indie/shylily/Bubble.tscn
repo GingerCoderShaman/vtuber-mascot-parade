@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://5vnpkb4jbxmm"]
+
+[ext_resource type="Script" uid="uid://b2lnbid0ehhh4" path="res://characters/indie/shylily/Bubble.gd" id="1_jttkj"]
+[ext_resource type="Texture2D" uid="uid://c7ms8mqmnv806" path="res://textures/indie/shylily/protective_bubble.png" id="1_oq4vn"]
+
+[node name="Bubble" type="Node2D"]
+script = ExtResource("1_jttkj")
+
+[node name="ProtectiveBubble" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_oq4vn")

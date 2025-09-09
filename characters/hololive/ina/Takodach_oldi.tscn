@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://bfr3nsgr2emqt"]
+
+[ext_resource type="Script" uid="uid://broxfil5ackat" path="res://characters/hololive/ina/Takodachi.gd" id="1_epbrs"]
+[ext_resource type="Texture2D" uid="uid://jin8deslfl3t" path="res://textures/hololive/ina/takodachi_halo.png" id="2_slw32"]
+[ext_resource type="Texture2D" uid="uid://20us4e26qtxh" path="res://textures/hololive/ina/takodachi_base.png" id="3_uij2j"]
+[ext_resource type="Texture2D" uid="uid://brvmxerk58ib1" path="res://textures/hololive/ina/takodachi_moved.png" id="4_vnt0i"]
+[ext_resource type="Script" uid="uid://cu6hrbmtg2cos" path="res://characters/generic/animation_sprite_player.gd" id="5_lljp3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k4k4w"]
+radius = 12.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_74xwd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uij2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vnt0i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Takodachi" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_epbrs")
+health = 2.0
+size = 8.0
+metadata/_custom_type_script = "uid://m8uu7uvs1xj6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k4k4w")
+
+[node name="Halo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_slw32")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_74xwd")
+frame_progress = 0.0810617
+script = ExtResource("5_lljp3")

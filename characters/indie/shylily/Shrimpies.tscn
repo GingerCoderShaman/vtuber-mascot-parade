@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0utsgpebadc7"]
+
+[ext_resource type="Script" uid="uid://da5t56ara8q3k" path="res://characters/indie/shylily/Shrimpies.gd" id="1_psako"]
+[ext_resource type="Texture2D" uid="uid://ds00c226fcc2b" path="res://textures/indie/shylily/shrimp_base.png" id="2_e7muc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ospnh"]
+radius = 12.0416
+
+[node name="Shrimpies" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_psako")
+protective_barrier_amount = 20.0
+protective_barrier_decay_rate = 2.0
+haste = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ospnh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("2_e7muc")

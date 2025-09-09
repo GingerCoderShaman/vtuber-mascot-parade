@@ -43,3 +43,7 @@ https://www.youtube.com/watch?v=qVZhsRe-dsg&ab_channel=GingerCoderShaman
 
 (part 12)
 https://www.youtube.com/watch?v=gMMQZOB4V5A&ab_channel=GingerCoderShaman
+
+(Part 13)
+(start of stream got cut off due to technical issues and a potential info about me leak because copilot decided to say hello for no reason)
+https://www.youtube.com/watch?v=j8DjmMh_Jtg&ab_channel=GingerCoderShaman

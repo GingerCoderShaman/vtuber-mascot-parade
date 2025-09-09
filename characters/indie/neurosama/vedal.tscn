@@ -110,7 +110,7 @@ texture = ExtResource("4_rlern")
 
 [node name="VedalHead" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
-position = Vector2(-7, -4.77001)
+position = Vector2(-6.66667, -6.66667)
 scale = Vector2(0.75, 0.71875)
 texture = ExtResource("5_0fty0")
 

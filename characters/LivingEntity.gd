@@ -10,7 +10,29 @@ var angle_speed = 3
 var angled_velocity:float = 105
 
 var current_health
-var angle = 0
+
+var _angle = 0
+
+var angle:
+	set(value):
+		value = fposmod(value, PI*2)
+		_angle = value
+		if (PI/4 <= value && value < PI * 3/4):
+			facing_direction = FACING_DIRECTION.DOWN
+		elif (PI * 3/4 <= value && value < PI * 5/4):
+			facing_direction = FACING_DIRECTION.LEFT
+		elif (PI * 5/4 <= value && value < PI * 7/4):
+			facing_direction = FACING_DIRECTION.UP
+		else:
+			facing_direction = FACING_DIRECTION.RIGHT
+	get(): return _angle
+
+
+var facing_direction = FACING_DIRECTION.DOWN
+
+enum FACING_DIRECTION {
+	UP, DOWN, LEFT, RIGHT
+}
 
 @export var in_game = true
 
