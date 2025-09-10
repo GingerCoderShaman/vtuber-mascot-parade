@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c221i8ixpbg4"]
+
+[ext_resource type="Script" uid="uid://mixsr0fbte1h" path="res://characters/indie/zentraya/fireball.gd" id="1_ubh4k"]
+[ext_resource type="Texture2D" uid="uid://cyy3lrxq0gm57" path="res://textures/indie/zentraya/fireball.png" id="2_aafnd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x4ddp"]
+radius = 12.0416
+
+[node name="Fireball" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ubh4k")
+metadata/_custom_type_script = "uid://m8uu7uvs1xj6"
+
+[node name="Fireball" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(1, 0)
+texture = ExtResource("2_aafnd")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_x4ddp")
+
+[connection signal="body_entered" from="Area2D" to="." method="on_fireball_enter"]

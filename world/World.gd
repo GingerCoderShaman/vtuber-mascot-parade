@@ -10,7 +10,8 @@ var game_over = false
 
 @onready var enemies = %Enemies
 @onready var objects = %Objects
-@onready var player = $Player
+@onready var player = %Player
+@onready var enemy_wave_label = %EnemyWaveLabel
 
 func _ready() -> void:
 	pass
@@ -41,7 +42,14 @@ func _enter_tree() -> void:
 func _exit_tree() -> void:
 	current = null
 
-	
+func get_closest_enemy(location):
+	var enemy = null
+	for target in enemies.get_children():
+		if enemy == null || enemy.position.distance_to(location) > \
+			target.position.distance_to(location):
+			enemy = target
+	return enemy
+
 func check_game_over():
 	if %Player.get_children().size() == 0:
 		game_over = true

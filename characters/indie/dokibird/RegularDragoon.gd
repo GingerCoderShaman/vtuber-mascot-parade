@@ -23,14 +23,10 @@ func get_role_skill_value():
 func get_character_nane():
 	return "Dragoon"
 
-func do_action():
-	var enemy = null
-
-	for target in World.current.enemies.get_children():
-		if enemy == null || enemy.position.distance_to(position) > \
-			target.position.distance_to(position):
-			enemy = target
-	if enemy == null:
+func do_action():	
+	var enemy = World.current.get_closest_enemy(position)
+	
+	if !enemy:
 		return
 
 	var laser = laser.instantiate()

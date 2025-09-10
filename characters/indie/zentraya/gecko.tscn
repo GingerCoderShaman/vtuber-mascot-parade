@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg1lpbeqirmia"]
+
+[ext_resource type="Script" uid="uid://d2rrdic7yiv0w" path="res://characters/indie/zentraya/gecko.gd" id="1_fefv4"]
+[ext_resource type="Texture2D" uid="uid://etb55vc5w3mt" path="res://textures/indie/zentraya/geck_base.png" id="2_rvyec"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rvyec"]
+radius = 12.0416
+
+[node name="Gecko" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_fefv4")
+haste = 5.0
+
+[node name="GeckBase" type="Sprite2D" parent="."]
+texture_filter = 3
+texture = ExtResource("2_rvyec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rvyec")

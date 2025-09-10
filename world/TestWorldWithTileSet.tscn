@@ -1,51 +1,76 @@
-[gd_scene load_steps=23 format=4 uid="uid://0d53cwql5fn2"]
+[gd_scene load_steps=29 format=4 uid="uid://0d53cwql5fn2"]
 
 [ext_resource type="Script" uid="uid://dhy4u2bq5aq2k" path="res://world/World.gd" id="1_gh8rh"]
 [ext_resource type="Script" uid="uid://bwm0nal68tatf" path="res://world/PlayerHandler.gd" id="2_e8tsc"]
-[ext_resource type="Script" uid="uid://n8bdti25fg8k" path="res://world/Spawner.gd" id="3_e8tsc"]
-[ext_resource type="Script" uid="uid://c30df5eddtyb" path="res://world/EnemyWave.gd" id="4_54sw2"]
+[ext_resource type="Script" uid="uid://n8bdti25fg8k" path="res://world/entities/Spawner.gd" id="3_e8tsc"]
+[ext_resource type="Script" uid="uid://c8sh6fsflqewq" path="res://world/entities/EnemyWave.gd" id="4_54sw2"]
 [ext_resource type="PackedScene" uid="uid://27oau5umppgs" path="res://enemy/hololive/ina/AngryTakodachi.tscn" id="4_gnvh5"]
 [ext_resource type="PackedScene" uid="uid://cltqm5nlopcfo" path="res://enemy/indie/henya/rubixcube_evil.tscn" id="6_50fip"]
+[ext_resource type="Script" uid="uid://c30df5eddtyb" path="res://world/entities/StaticEnemyWave.gd" id="6_ni6x4"]
 [ext_resource type="PackedScene" uid="uid://sq0w442c01wi" path="res://enemy/indie/dokibird/AngryDragoon.tscn" id="6_w3h10"]
 [ext_resource type="Shader" uid="uid://cnkmv2ctvmn6y" path="res://shaders/water.gdshader" id="7_54sw2"]
 [ext_resource type="Texture2D" uid="uid://cbafroo3d3xag" path="res://textures/tilesets/water.png" id="8_gnvh5"]
 [ext_resource type="Texture2D" uid="uid://bf75id1ojqkyh" path="res://textures/map_assets/turtle_house.png" id="9_50fip"]
+[ext_resource type="Script" uid="uid://dputm4rlqx2td" path="res://world/entities/RandomizedEnemyWave.gd" id="9_ry2k1"]
+[ext_resource type="Script" uid="uid://b3ax1igm5mvs4" path="res://world/EnemyWaveLabel.gd" id="11_uojo3"]
 
 [sub_resource type="Resource" id="Resource_uojo3"]
-script = ExtResource("4_54sw2")
+script = ExtResource("6_ni6x4")
 enemies = Array[PackedScene]([ExtResource("4_gnvh5"), ExtResource("4_gnvh5"), ExtResource("4_gnvh5"), ExtResource("4_gnvh5"), ExtResource("4_gnvh5")])
 spawn_time = 1.5
+wave_name = "Wave 1 (Takodachi Assault)"
 metadata/_custom_type_script = "uid://c30df5eddtyb"
 
 [sub_resource type="Resource" id="Resource_ni6x4"]
-script = ExtResource("4_54sw2")
+script = ExtResource("6_ni6x4")
 enemies = Array[PackedScene]([ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10")])
-spawn_time = 1.5
+spawn_time = 1.7
+wave_name = "Wave 2 (Dragoon Assault"
 metadata/_custom_type_script = "uid://c30df5eddtyb"
 
+[sub_resource type="Resource" id="Resource_ydoso"]
+script = ExtResource("9_ry2k1")
+enemies = Array[PackedScene]([ExtResource("6_w3h10"), ExtResource("6_50fip"), ExtResource("4_gnvh5")])
+spawn_count = 5
+spawn_time = 1.6
+wave_name = "Wave 3 (Randomized!)"
+metadata/_custom_type_script = "uid://dputm4rlqx2td"
+
 [sub_resource type="Resource" id="Resource_ry2k1"]
-script = ExtResource("4_54sw2")
+script = ExtResource("6_ni6x4")
 enemies = Array[PackedScene]([ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_50fip"), ExtResource("4_gnvh5"), ExtResource("4_gnvh5")])
-spawn_time = 1.5
+spawn_time = 1.4
+wave_name = "Wave 4 (Union Agreement)"
 metadata/_custom_type_script = "uid://c30df5eddtyb"
 
 [sub_resource type="Resource" id="Resource_w3h10"]
-script = ExtResource("4_54sw2")
+script = ExtResource("6_ni6x4")
 enemies = Array[PackedScene]([ExtResource("4_gnvh5"), ExtResource("4_gnvh5"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_50fip"), ExtResource("6_w3h10")])
-spawn_time = 0.5
+spawn_time = 1.0
+wave_name = "Wave 5 (Another GO)"
 metadata/_custom_type_script = "uid://c30df5eddtyb"
 
 [sub_resource type="Resource" id="Resource_lp7kk"]
-script = ExtResource("4_54sw2")
+script = ExtResource("6_ni6x4")
 enemies = Array[PackedScene]([ExtResource("6_w3h10"), ExtResource("4_gnvh5"), ExtResource("6_w3h10"), ExtResource("4_gnvh5"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10")])
-spawn_time = 0.5
+spawn_time = 1.0
+wave_name = "Wave 6 (Dragoon Raid)"
 metadata/_custom_type_script = "uid://c30df5eddtyb"
 
 [sub_resource type="Resource" id="Resource_piq7u"]
-script = ExtResource("4_54sw2")
+script = ExtResource("6_ni6x4")
 enemies = Array[PackedScene]([ExtResource("6_50fip"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("4_gnvh5"), ExtResource("6_w3h10"), ExtResource("6_50fip"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_w3h10"), ExtResource("6_50fip"), ExtResource("6_w3h10"), ExtResource("6_50fip"), ExtResource("6_w3h10"), ExtResource("4_gnvh5"), ExtResource("6_w3h10"), ExtResource("6_50fip")])
-spawn_time = 0.1
+spawn_time = 0.5
+wave_name = "Wave 7 (Final Stand)"
 metadata/_custom_type_script = "uid://c30df5eddtyb"
+
+[sub_resource type="Resource" id="Resource_d4bfa"]
+script = ExtResource("9_ry2k1")
+enemies = Array[PackedScene]([ExtResource("6_50fip"), ExtResource("6_w3h10"), ExtResource("4_gnvh5")])
+spawn_count = 20000
+spawn_time = 0.4
+wave_name = "Infinite Random Final Round"
+metadata/_custom_type_script = "uid://dputm4rlqx2td"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gnvh5"]
 shader = ExtResource("7_54sw2")
@@ -330,6 +355,10 @@ size = Vector2(170, 97)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uojo3"]
 size = Vector2(114.694, 53.494)
 
+[sub_resource type="LabelSettings" id="LabelSettings_w3h10"]
+font_size = 64
+font_color = Color(1, 0, 0, 1)
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_gh8rh")
 world_size = Vector2(900, 500)
@@ -351,7 +380,7 @@ unique_name_in_owner = true
 [node name="Spawners" type="Node2D" parent="."]
 script = ExtResource("3_e8tsc")
 starting_spawn_time = 5.0
-waves = Array[ExtResource("4_54sw2")]([SubResource("Resource_uojo3"), SubResource("Resource_ni6x4"), SubResource("Resource_ry2k1"), SubResource("Resource_w3h10"), SubResource("Resource_lp7kk"), SubResource("Resource_piq7u")])
+waves = Array[ExtResource("4_54sw2")]([SubResource("Resource_uojo3"), SubResource("Resource_ni6x4"), SubResource("Resource_ydoso"), SubResource("Resource_ry2k1"), SubResource("Resource_w3h10"), SubResource("Resource_lp7kk"), SubResource("Resource_piq7u"), SubResource("Resource_d4bfa")])
 infinite = true
 
 [node name="Node2D" type="Node2D" parent="Spawners"]
@@ -410,3 +439,16 @@ position = Vector2(420, 181)
 rotation = -0.726065
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_uojo3")
+
+[node name="EnemyWaveLabel" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+offset_left = -91.0
+offset_top = 298.0
+offset_right = 984.0
+offset_bottom = 483.0
+text = "Text"
+label_settings = SubResource("LabelSettings_w3h10")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("11_uojo3")

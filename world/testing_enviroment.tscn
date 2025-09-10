@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bwm0nal68tatf" path="res://world/PlayerHandler.gd" id="2_2pcqi"]
 [ext_resource type="Script" uid="uid://b83sj5rv6p0bd" path="res://world/PushBox.gd" id="2_7cxxk"]
 [ext_resource type="Script" uid="uid://br537khhokaps" path="res://world/BoundaryBox.gd" id="3_xa3br"]
-[ext_resource type="Script" uid="uid://n8bdti25fg8k" path="res://world/Spawner.gd" id="5_1jveq"]
+[ext_resource type="Script" uid="uid://n8bdti25fg8k" path="res://world/entities/Spawner.gd" id="5_1jveq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7cxxk"]
 size = Vector2(1016, 183)
