@@ -28,6 +28,7 @@ var angle:
 	get(): return _angle
 
 
+@export
 var facing_direction = FACING_DIRECTION.DOWN
 
 enum FACING_DIRECTION {

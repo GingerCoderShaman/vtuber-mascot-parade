@@ -1,0 +1,219 @@
+[gd_scene load_steps=28 format=3 uid="uid://bpp1008y0rtrt"]
+
+[ext_resource type="Script" uid="uid://cqckhnp5uiudt" path="res://characters/hololive/fuwamoco/Ruffians.gd" id="1_i1lp8"]
+[ext_resource type="Texture2D" uid="uid://dibq3wofhfp63" path="res://textures/hololive/fuwamoco/base_front_pink_1.png" id="2_gkm1w"]
+[ext_resource type="Texture2D" uid="uid://sw5kdwu30dbx" path="res://textures/hololive/fuwamoco/base_front_pink_2.png" id="3_35m0a"]
+[ext_resource type="Texture2D" uid="uid://danrwq501nuvo" path="res://textures/hololive/fuwamoco/base_left_side_pink_1.png" id="4_707gc"]
+[ext_resource type="Script" uid="uid://dobsw2wq3vrtk" path="res://characters/generic/VisibleWhenDirectionalSpritePlayer.gd" id="4_jk1ye"]
+[ext_resource type="Texture2D" uid="uid://blodyv02wu3wq" path="res://textures/hololive/fuwamoco/base_left_side_pink_2.png" id="5_rk38p"]
+[ext_resource type="Texture2D" uid="uid://cvlcorumtps01" path="res://textures/hololive/fuwamoco/base_right_side_pink_1.png" id="6_p3vd6"]
+[ext_resource type="Texture2D" uid="uid://bja8f4ip530yn" path="res://textures/hololive/fuwamoco/base_right_side_pink_2.png" id="7_jikbp"]
+[ext_resource type="Texture2D" uid="uid://q74xetubbq3p" path="res://textures/hololive/fuwamoco/base_back_pink_1.png" id="8_5dpm6"]
+[ext_resource type="Texture2D" uid="uid://rbyhb7qj1lgt" path="res://textures/hololive/fuwamoco/base_back_pink_2.png" id="9_ttgec"]
+[ext_resource type="Texture2D" uid="uid://cas0nhs837j0v" path="res://textures/hololive/fuwamoco/base_front_blue_1.png" id="10_8n1dg"]
+[ext_resource type="Texture2D" uid="uid://ckc7r7ip8opdt" path="res://textures/hololive/fuwamoco/base_front_blue_2.png" id="11_jk1ye"]
+[ext_resource type="Texture2D" uid="uid://5s7ms1rpw7fv" path="res://textures/hololive/fuwamoco/base_left_side_blue_1.png" id="12_tyowj"]
+[ext_resource type="Texture2D" uid="uid://bq7x6mxn72ykx" path="res://textures/hololive/fuwamoco/base_left_side_blue_2.png" id="13_jparv"]
+[ext_resource type="Texture2D" uid="uid://b4py7t8g07wii" path="res://textures/hololive/fuwamoco/base_right_side_blue_1.png" id="14_vtmyy"]
+[ext_resource type="Texture2D" uid="uid://buh6aw4y0cj47" path="res://textures/hololive/fuwamoco/base_right_side_blue_2.png" id="15_pl4h8"]
+[ext_resource type="Texture2D" uid="uid://bwapc4i58q7ba" path="res://textures/hololive/fuwamoco/base_back_blue_1.png" id="16_8n1dg"]
+[ext_resource type="Texture2D" uid="uid://ddm0tj7yvp0ks" path="res://textures/hololive/fuwamoco/base_back_blue_2.png" id="17_jk1ye"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ls4y"]
+radius = 12.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fr7qw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gkm1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_35m0a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6aqck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_707gc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rk38p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogv00"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_p3vd6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jikbp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mq5pt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5dpm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ttgec")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5i0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8n1dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jk1ye")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v28lw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_tyowj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jparv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75jyx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_vtmyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pl4h8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tyowj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_8n1dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jk1ye")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Ruffians" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_i1lp8")
+haste = 10.0
+facing_direction = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2ls4y")
+
+[node name="Pink" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Front" type="AnimatedSprite2D" parent="Pink" node_paths=PackedStringArray("parent")]
+visible = false
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_fr7qw")
+frame_progress = 0.996328
+script = ExtResource("4_jk1ye")
+parent = NodePath("../..")
+
+[node name="Left" type="AnimatedSprite2D" parent="Pink" node_paths=PackedStringArray("parent")]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_6aqck")
+frame_progress = 0.473019
+script = ExtResource("4_jk1ye")
+direction = 2
+parent = NodePath("../..")
+
+[node name="Right" type="AnimatedSprite2D" parent="Pink" node_paths=PackedStringArray("parent")]
+visible = false
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_ogv00")
+frame_progress = 0.394483
+script = ExtResource("4_jk1ye")
+direction = 3
+parent = NodePath("../..")
+
+[node name="Back" type="AnimatedSprite2D" parent="Pink" node_paths=PackedStringArray("parent")]
+visible = false
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_mq5pt")
+frame_progress = 0.598405
+script = ExtResource("4_jk1ye")
+direction = 0
+parent = NodePath("../..")
+
+[node name="Blue" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Front" type="AnimatedSprite2D" parent="Blue" node_paths=PackedStringArray("parent")]
+visible = false
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_d5i0d")
+frame_progress = 0.597358
+script = ExtResource("4_jk1ye")
+parent = NodePath("../..")
+
+[node name="Left" type="AnimatedSprite2D" parent="Blue" node_paths=PackedStringArray("parent")]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_v28lw")
+frame_progress = 0.218578
+script = ExtResource("4_jk1ye")
+direction = 2
+parent = NodePath("../..")
+
+[node name="Right" type="AnimatedSprite2D" parent="Blue" node_paths=PackedStringArray("parent")]
+visible = false
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_75jyx")
+frame_progress = 0.859829
+script = ExtResource("4_jk1ye")
+direction = 3
+parent = NodePath("../..")
+
+[node name="Back" type="AnimatedSprite2D" parent="Blue" node_paths=PackedStringArray("parent")]
+visible = false
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_tyowj")
+frame_progress = 0.808603
+script = ExtResource("4_jk1ye")
+direction = 0
+parent = NodePath("../..")

@@ -75,6 +75,8 @@ func process_actions(delta:float):
 
 func take_damage(amount:float=1, source = null) -> bool:
 	var player = get_parent()
+	if player is not PlayerHandler:
+		return super.take_damage(amount, source)
 	for guard in player.damage_guard:
 		if !is_instance_valid(guard):
 			continue

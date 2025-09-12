@@ -50,3 +50,6 @@ https://www.youtube.com/watch?v=j8DjmMh_Jtg&ab_channel=GingerCoderShaman
 
 (part 14)
 https://www.youtube.com/watch?v=NFrOaPSFCCQ&ab_channel=GingerCoderShaman
+
+(stream 15)
+https://www.youtube.com/watch?v=rJFiBBVMULg&ab_channel=GingerCoderShaman
